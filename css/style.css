@@ -1357,6 +1357,9 @@ footer .content .contact_info > div a {
   .popup .content .popup_body form .field_group {
     max-width: 100%;
   }
+  .landing_section header.nav_active .navbar a {
+    height: 30px;
+  }
 }
 @media screen and (max-width: 380px) {
   .contact .contact_bg .left-image {
