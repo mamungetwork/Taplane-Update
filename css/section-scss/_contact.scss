@@ -1,0 +1,50 @@
+.contact {
+  padding: 130px 0;
+  background: $primaryColor;
+  text-align: center;
+
+  .content {
+    width: 100%;
+    h2 {
+      font-weight: normal;
+      font-size: 42px;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    p {
+      color: #fff;
+      margin-bottom: 50px;
+    }
+
+    .btn {
+      font-size: 18px;
+    }
+  }
+
+  .contact_bg {
+    div {
+      position: absolute;
+      z-index: -1;
+    }
+    .left-image {
+      bottom: -5px;
+      left: 0;
+      width: 50%;
+
+      img {
+        width: 100%;
+      }
+    }
+    .right-image {
+      bottom: 0;
+      left: 50%;
+      height: 100%;
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}

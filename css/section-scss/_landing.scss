@@ -1,0 +1,315 @@
+.landing_section {
+  height: 100vh;
+  background: $primaryColor;
+  color: #fff;
+  isolation: unset;
+
+  header {
+    width: 100%;
+    transition: 0.3s;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+      align-items: center;
+      transition: 0.3s;
+
+      .brand_id {
+        height: 55px;
+        opacity: 0;
+        transform: translateY(-80px);
+        animation: navbarEntry 0.5s ease-in-out forwards;
+        transition: 0.3s;
+
+        img {
+          transition: 0.3s;
+          height: 100%;
+        }
+      }
+      .btn {
+        opacity: 0;
+        transform: translateY(-80px);
+        animation: navbarEntry 0.5s ease-in-out forwards;
+        animation-delay: 0.1s;
+        transition: 0.3s;
+      }
+    }
+  }
+  .nav_bg {
+    height: 90px;
+  }
+  header.nav_active {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 6px 35px rgba(0, 0, 0, 0.08);
+
+    .navbar {
+      padding: 15px 0;
+
+      a {
+        height: 45px;
+      }
+
+      .btn {
+        background: $primaryColor;
+        color: #fff;
+
+        &:hover {
+          background: #fff;
+          color: $primaryColor;
+          border-color: $primaryColor;
+        }
+      }
+    }
+  }
+
+  .slider_landing {
+    position: relative;
+  }
+
+  .content {
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 80px;
+
+    .info {
+      width: 100%;
+      margin-top: -150px;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 47px;
+      text-align: left;
+      color: #fff;
+      overflow: hidden;
+      line-height: 1;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateX(-150px);
+      animation: h1TagEntry 0.8s ease-in-out forwards;
+      animation-delay: 0.2s;
+    }
+    h2 > span {
+      overflow: hidden;
+      .whitespace {
+        width: 8px;
+        height: 100%;
+      }
+    }
+    h2 {
+      font-size: 22px;
+      opacity: 0;
+      transform: translateX(-150px);
+      animation: h1TagEntry 0.8s ease-in-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    .spaceship_container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 5;
+
+      svg {
+        max-width: 539px;
+        height: 675px;
+        overflow-x: hidden;
+        overflow-y: visible;
+        opacity: 0;
+        transform: translateX(250px);
+        animation: spaceshipEntry 1s ease-in-out forwards;
+        animation-delay: 0.3s;
+
+        line {
+          opacity: 0;
+        }
+        .shipRotation {
+          transition: all 0.3s;
+          // animation: spaceShip 8s ease-in-out infinite;
+        }
+      }
+      .line1 {
+        width: 60px;
+        animation: moveclouds 0.3s linear infinite;
+        animation-delay: 0;
+      }
+      .line2 {
+        animation: moveclouds 0.4s linear infinite;
+        animation-delay: 0.4s;
+      }
+      .line3 {
+        animation: moveclouds 0.3s linear infinite;
+        animation-delay: 0.8s;
+      }
+      .line4 {
+        animation: moveclouds 0.6s linear infinite;
+        animation-delay: 1s;
+      }
+      .line5 {
+        animation: moveclouds 0.2s linear infinite;
+        animation-delay: 0.2s;
+      }
+      .line6 {
+        animation: moveclouds 0.3s linear infinite;
+        animation-delay: 0.3s;
+      }
+    }
+  }
+
+  .landing_bg {
+    width: 100%;
+
+    .top_cloud {
+      width: 100%;
+      height: 260px;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom;
+      }
+    }
+
+    .center_cloud {
+      div {
+        position: absolute;
+        opacity: 70%;
+        z-index: 1;
+        opacity: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .cloud1 {
+        height: 60px;
+        left: 0;
+        bottom: 35%;
+        animation: smallCloud 10s linear infinite;
+        animation-delay: 0;
+      }
+      .cloud2 {
+        height: 25px;
+        left: 0;
+        top: 25%;
+        animation: smallCloud 13s linear infinite;
+        animation-delay: 0.8s;
+      }
+      .cloud3 {
+        height: 45px;
+        left: 0;
+        top: 45%;
+        animation: smallCloud 11s linear infinite;
+        animation-delay: 1.6s;
+      }
+      .cloud4 {
+        height: 42px;
+        left: 0;
+        top: 65%;
+        animation: smallCloud 12s linear infinite;
+        animation-delay: 2.4s;
+      }
+      .cloud5 {
+        height: 47px;
+        left: 0;
+        top: 15%;
+        animation: smallCloud 14s linear infinite;
+        animation-delay: 3.2s;
+      }
+      .cloud6 {
+        height: 39px;
+        left: 0;
+        bottom: 40%;
+        animation: smallCloud 16s linear infinite;
+        animation-delay: 4s;
+      }
+      .cloud7 {
+        height: 47px;
+        left: 0;
+        top: 25%;
+        animation: smallCloud 18s linear infinite;
+        animation-delay: 4.8s;
+      }
+      .cloud8 {
+        height: 45px;
+        left: 0;
+        bottom: 30%;
+        animation: smallCloud 22s linear infinite;
+        animation-delay: 5.6s;
+      }
+      .cloud9 {
+        height: 64px;
+        left: 0;
+        bottom: 50%;
+        animation: smallCloud 15s linear infinite;
+        animation-delay: 6.4s;
+      }
+    }
+    .cloud_bottom {
+      width: 100%;
+      overflow: hidden;
+
+      div {
+        position: absolute;
+        transition: 0.3s;
+
+        img {
+          margin-left: -4px;
+        }
+      }
+
+      .cloud_bottom1 {
+        width: 5760px;
+        z-index: 3;
+        bottom: 0;
+        height: 227px;
+
+        img {
+          display: inline-block;
+        }
+        .first {
+          animation: bannermove 20s linear infinite;
+        }
+      }
+      .cloud_bottom2 {
+        width: 5760px;
+        z-index: 2;
+        bottom: 0;
+        height: 266px;
+
+        img {
+          display: inline-block;
+        }
+        .first {
+          animation: bannermove 24s linear infinite;
+        }
+      }
+      .cloud_bottom3 {
+        width: 5760px;
+        z-index: 1;
+        bottom: 0;
+        height: 338px;
+
+        img {
+          display: inline-block;
+        }
+
+        .first {
+          animation: bannermove 28s linear infinite;
+        }
+      }
+    }
+  }
+}

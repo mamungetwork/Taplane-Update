@@ -1,0 +1,159 @@
+/* ******************** Main Style Component Import ******************** */
+@import "color";
+@import "fontface";
+
+/* ******************** GLOBAL STYLING START ******************** */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  ::selection {
+    background: $selectionColor;
+    color: #fff;
+  }
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $darkColor;
+  line-height: 1;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+p {
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 22px;
+  color: $textColor;
+}
+
+.btn {
+  border: 0;
+  outline: 0;
+  padding: 16px 70px;
+  background: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  color: $primaryColor;
+  border-radius: 100px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: 0.3s;
+
+  &:hover {
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    transform: translateY(-5px) scale(1);
+  }
+  &:active {
+    transform: translateY(0px) scale(0.97) !important;
+  }
+}
+
+.extra_height {
+  display: none;
+}
+
+/* ******************** GLOBAL STYLING END ******************** */
+
+/* ******************** RE-USABLE STYLING START ******************** */
+.container {
+  width: 100%;
+  max-width: 1230px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.span {
+  margin: 0;
+  padding: 0;
+}
+
+.cd-headline.clip span {
+  padding: 0;
+}
+
+.top {
+  margin-bottom: 50px;
+  h2,
+  p {
+    overflow: hidden;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+}
+
+.landing_section,
+.about_us,
+.contact,
+footer,
+.how_we_can_help,
+.what_we_do {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+}
+/* ******************** RE-USABLE STYLING END ******************** */
+
+/* ******************** LANDING STYLING START ******************** */
+@import "section-scss/landing";
+/* ******************** LANDING STYLING END ******************** */
+
+/* ******************** WHAT WE DO? STYLING START ******************** */
+@import "section-scss/what-we-do";
+/* ******************** WHAT WE DO? STYLING END ******************** */
+
+/* ******************** WHAT WE DO? STYLING START ******************** */
+@import "section-scss/how-we-can-help";
+/* ******************** WHAT WE DO? STYLING END ******************** */
+
+/* ******************** ABOUT US STYLING START ******************** */
+@import "section-scss/about-us";
+/* ******************** ABOUT US STYLING END ******************** */
+
+/* ******************** CONTACT STYLING START ******************** */
+@import "section-scss/contact";
+/* ******************** CONTACT STYLING END ******************** */
+
+/* ******************** Footer STYLING START ******************** */
+@import "section-scss/footer";
+/* ******************** Footer STYLING END ******************** */
+
+/* ******************** POPUP STYLING START ******************** */
+@import "popup";
+/* ******************** POPUP STYLING END ******************** */
+
+/* ******************** ANIMATION STYLING START ******************** */
+@import "animations";
+/* ******************** ANIMATION STYLING END ******************** */
+
+/* ******************** RESPONSIVE STYLING START ******************** */
+@import "section-scss/responsive";
+/* ******************** RESPONSIVE STYLING END ******************** */
