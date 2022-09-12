@@ -12,7 +12,7 @@ var xmlns = "http://www.w3.org/2000/svg",
   beam = select(".beam"),
   glowAlpha = select("#glowAlpha");
 
-var hoverTween = TweenMax.to(ship, 1.8, {
+var hoverTween = TweenMax.to(ship, 2.8, {
   y: "+=15",
   x: "-=100",
   yoyo: true,
@@ -21,7 +21,7 @@ var hoverTween = TweenMax.to(ship, 1.8, {
 });
 var rotationTween = TweenMax.fromTo(
   shipRotation,
-  1.3,
+  2.3,
   {
     rotation: -8,
   },
@@ -77,32 +77,32 @@ popupOverlay.addEventListener("click", function () {
 setInterval(function () {
   $(".hex-1 .first").toggleClass("active");
   $(".hex-1 .second").toggleClass("active");
-}, 3000);
+}, 6000);
 setInterval(function () {
   $(".hex-2 .first").toggleClass("active");
   $(".hex-2 .second").toggleClass("active");
-}, 3300);
+}, 6300);
 setInterval(function () {
   $(".hex-3 .first").toggleClass("active");
   $(".hex-3 .second").toggleClass("active");
-}, 3800);
+}, 6800);
 
 setInterval(function () {
   $(".hex-4 .first").toggleClass("active");
   $(".hex-4 .second").toggleClass("active");
-}, 4200);
+}, 7200);
 setInterval(function () {
   $(".hex-5 .first").toggleClass("active");
   $(".hex-5 .second").toggleClass("active");
-}, 4800);
+}, 7800);
 setInterval(function () {
   $(".hex-6 .first").toggleClass("active");
   $(".hex-6 .second").toggleClass("active");
-}, 5100);
+}, 8100);
 setInterval(function () {
   $(".hex-7 .first").toggleClass("active");
   $(".hex-7 .second").toggleClass("active");
-}, 5800);
+}, 8800);
 
 /* ******************* ABOUT US - STATS SECTION COUNTER ******************* */
 const animNum = (EL) => {
@@ -154,7 +154,7 @@ var pos = $(window).scrollTop();
 if (pos > 5) {
   notActive = 1;
   navbar.addClass("nav_active");
-  navImg.attr("src", `images/taplane_${notActive}.png`);
+  navImg.attr("src", `images/taplane_${notActive}.svg`);
 }
 
 $(window).scroll(function () {
@@ -166,15 +166,15 @@ $(window).scroll(function () {
   if (c < currentScrollTop && a > b) {
     navbar.addClass("nav_active");
     notActive = 1;
-    navImg.attr("src", `images/taplane_${notActive}.png`);
+    navImg.attr("src", `images/taplane_${notActive}.svg`);
   } else if (c > currentScrollTop && !(a <= b)) {
     navbar.addClass("nav_active");
     notActive = 1;
-    navImg.attr("src", `images/taplane_${notActive}.png`);
+    navImg.attr("src", `images/taplane_${notActive}.svg`);
   } else if (a == 0) {
     navbar.removeClass("nav_active");
     notActive = 0;
-    navImg.attr("src", `images/taplane_${notActive}.png`);
+    navImg.attr("src", `images/taplane_${notActive}.svg`);
   }
 
   c = currentScrollTop;

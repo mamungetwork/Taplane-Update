@@ -108,13 +108,17 @@
       transform: translateX(-150px);
       animation: h1TagEntry 0.8s ease-in-out forwards;
       animation-delay: 0.3s;
+
+      b i {
+        font-style: normal;
+      }
     }
 
     .spaceship_container {
       width: 100%;
       height: 100%;
       position: relative;
-      z-index: 5;
+      z-index: 2;
 
       svg {
         max-width: 539px;
@@ -197,63 +201,63 @@
         height: 60px;
         left: 0;
         bottom: 35%;
-        animation: smallCloud 10s linear infinite;
+        animation: smallCloud 20s linear infinite;
         animation-delay: 0;
       }
       .cloud2 {
         height: 25px;
         left: 0;
         top: 25%;
-        animation: smallCloud 13s linear infinite;
+        animation: smallCloud 26s linear infinite;
         animation-delay: 0.8s;
       }
       .cloud3 {
         height: 45px;
         left: 0;
         top: 45%;
-        animation: smallCloud 11s linear infinite;
+        animation: smallCloud 22s linear infinite;
         animation-delay: 1.6s;
       }
       .cloud4 {
         height: 42px;
         left: 0;
         top: 65%;
-        animation: smallCloud 12s linear infinite;
+        animation: smallCloud 24s linear infinite;
         animation-delay: 2.4s;
       }
       .cloud5 {
         height: 47px;
         left: 0;
         top: 15%;
-        animation: smallCloud 14s linear infinite;
+        animation: smallCloud 28s linear infinite;
         animation-delay: 3.2s;
       }
       .cloud6 {
         height: 39px;
         left: 0;
         bottom: 40%;
-        animation: smallCloud 16s linear infinite;
+        animation: smallCloud 32s linear infinite;
         animation-delay: 4s;
       }
       .cloud7 {
         height: 47px;
         left: 0;
         top: 25%;
-        animation: smallCloud 18s linear infinite;
+        animation: smallCloud 36s linear infinite;
         animation-delay: 4.8s;
       }
       .cloud8 {
         height: 45px;
         left: 0;
         bottom: 30%;
-        animation: smallCloud 22s linear infinite;
+        animation: smallCloud 44s linear infinite;
         animation-delay: 5.6s;
       }
       .cloud9 {
         height: 64px;
         left: 0;
         bottom: 50%;
-        animation: smallCloud 15s linear infinite;
+        animation: smallCloud 30s linear infinite;
         animation-delay: 6.4s;
       }
     }
@@ -272,7 +276,7 @@
 
       .cloud_bottom1 {
         width: 5760px;
-        z-index: 3;
+        z-index: 5;
         bottom: 0;
         height: 227px;
 
@@ -280,12 +284,12 @@
           display: inline-block;
         }
         .first {
-          animation: bannermove 20s linear infinite;
+          animation: bannermove 40s linear infinite;
         }
       }
       .cloud_bottom2 {
         width: 5760px;
-        z-index: 2;
+        z-index: 4;
         bottom: 0;
         height: 266px;
 
@@ -293,7 +297,7 @@
           display: inline-block;
         }
         .first {
-          animation: bannermove 24s linear infinite;
+          animation: bannermove 48s linear infinite;
         }
       }
       .cloud_bottom3 {
@@ -307,7 +311,7 @@
         }
 
         .first {
-          animation: bannermove 28s linear infinite;
+          animation: bannermove 56s linear infinite;
         }
       }
     }
