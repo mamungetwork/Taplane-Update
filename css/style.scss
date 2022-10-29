@@ -10,10 +10,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   ::selection {
     background: $selectionColor;
@@ -67,13 +63,20 @@ p {
     color: #fff;
     transform: translateY(-5px) scale(1);
   }
+
   &:active {
     transform: translateY(0px) scale(0.97) !important;
   }
 }
 
+// .extra_height {
+//   display: none;
+// }
+
 .extra_height {
-  display: none;
+  display: block;
+  height: 30px;
+  visibility: hidden;
 }
 
 /* ******************** GLOBAL STYLING END ******************** */
@@ -97,15 +100,24 @@ p {
 
 .top {
   margin-bottom: 50px;
+
   h2,
   p {
     overflow: hidden;
   }
+
   h2 {
     font-weight: bold;
-    font-size: 38px;
+    font-size: 46px;
     text-transform: capitalize;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-weight: lighter;
+    font-size: 18px;
+    line-height: 25px;
+    color: #555;
   }
 }
 
@@ -120,7 +132,12 @@ footer,
   overflow: hidden;
   isolation: isolate;
 }
+
 /* ******************** RE-USABLE STYLING END ******************** */
+
+/* ******************** NAVBAR STYLING START ******************** */
+@import "navbar";
+/* ******************** NAVBAR STYLING END ******************** */
 
 /* ******************** LANDING STYLING START ******************** */
 @import "section-scss/landing";
@@ -134,12 +151,20 @@ footer,
 @import "section-scss/how-we-can-help";
 /* ******************** WHAT WE DO? STYLING END ******************** */
 
+/* ******************** CLIENT LOGO STYLING START ******************** */
+@import "section-scss/client-logo";
+/* ******************** CLIENT LOGO STYLING END ******************** */
+
 /* ******************** ABOUT US STYLING START ******************** */
 @import "section-scss/about-us";
 /* ******************** ABOUT US STYLING END ******************** */
 
 /* ******************** CONTACT STYLING START ******************** */
 @import "section-scss/contact";
+/* ******************** CONTACT STYLING END ******************** */
+
+/* ******************** CONTACT STYLING START ******************** */
+@import "privacy-policy";
 /* ******************** CONTACT STYLING END ******************** */
 
 /* ******************** Footer STYLING START ******************** */

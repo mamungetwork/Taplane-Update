@@ -9,6 +9,7 @@
   transition: 0.3s;
   isolation: isolate;
   overflow: scroll;
+
   .popup_box {
     width: 100%;
     position: relative;
@@ -41,23 +42,28 @@
     transition: 0.3s;
     z-index: 1;
 
+    height: 100%;
+
     .form_layout {
       width: 100%;
       border-radius: 24px;
       background: #fff;
       padding: 30px;
+      transition: all 0.3s;
     }
 
     h2 {
       font-weight: bold;
       font-size: 32px;
       color: $darkColor;
+      transition: all 0.3s;
     }
 
     .close_btn {
       width: 16px;
       cursor: pointer;
       transition: 0.3s;
+
       img {
         width: 100%;
       }
@@ -71,17 +77,28 @@
       display: flex;
       flex-direction: row-reverse;
       justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      transition: all 0.3s;
     }
+
     .popup_body {
       width: 100%;
+      transition: all 0.3s;
+
       form {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        column-gap: 30px;
-        row-gap: 20px;
+        position: relative;
+        transition: all 0.3s;
+
+        .form_input {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          column-gap: 30px;
+          row-gap: 20px;
+          transition: all 0.3s;
+        }
 
         .group {
           width: 100%;
@@ -104,7 +121,9 @@
             margin-bottom: 9px;
             margin-left: 10px;
           }
-          .field {
+
+          .field,
+          #project {
             width: 100%;
             height: 55px;
             line-height: 55px;
@@ -123,17 +142,26 @@
               color: $textColor;
             }
 
+            &:focus {
+              border-color: rgb(28, 190, 69);
+              background: #fff;
+            }
+
             &:hover {
               border-color: $lightShade;
               background: #fff;
               box-shadow: 0 0 35px rgba(241, 60, 15, 0.1);
             }
 
-            &:focus {
-              border-color: $primaryColor;
-              background: #fff;
+            &:input:internal-autofill-selected {
+              background-color: $primaryColor !important;
             }
           }
+
+          // #project {
+          //   background: #fff;
+          //   border: 1px solid rgb(199, 199, 199);
+          // }
 
           #message {
             height: 120px;
@@ -142,7 +170,9 @@
             max-width: 990px;
           }
         }
-        .message {
+
+        .message,
+        .dropdown {
           max-width: 100%;
         }
 
@@ -151,6 +181,11 @@
           border-color: $primaryColor;
           color: #fff;
           max-width: 482px;
+          position: relative;
+
+          display: block;
+          overflow: hidden;
+          cursor: pointer;
 
           &:hover {
             color: $primaryColor;
@@ -158,10 +193,52 @@
             font-size: 16px;
           }
         }
+
+        .form_success {
+          width: 100%;
+          top: 100px;
+          text-align: center;
+          display: none;
+          padding: 20px 0;
+          transition: all 0.3s;
+
+          .success_content {
+            transition: all 0.3s;
+            width: 100%;
+
+            .image {
+              height: 260px;
+              margin-bottom: 40px;
+
+              img {
+                height: 100%;
+              }
+            }
+
+            h2 {
+              margin-bottom: 20px;
+              line-height: 30px;
+            }
+
+            p {
+              font-size: 18px;
+              max-width: 500px;
+              margin: 0 auto 30px;
+              line-height: 26px;
+            }
+
+            .btn {
+              display: inline-block;
+            }
+          }
+        }
       }
     }
+
     .popup_footer {
+      transition: all 0.3s;
       margin-top: 50px;
+
       h2 {
         font-size: 24px;
       }
@@ -175,7 +252,7 @@
         justify-content: space-between;
         gap: 20px;
 
-        > div {
+        >div {
           width: 100%;
           display: flex;
           align-items: center;
@@ -208,6 +285,7 @@
             font-size: 16px;
             line-height: 20px;
           }
+
           a {
             font-weight: 500;
             color: $darkColor;
@@ -217,13 +295,16 @@
 
         .phone {
           max-width: 310px;
+
           .icon {
             height: 18px;
             min-height: 18px;
           }
         }
+
         .mail {
           max-width: 310px;
+
           .icon {
             width: 20;
             height: 14px;
@@ -231,9 +312,11 @@
             min-height: 14px;
           }
         }
+
         .address {
           max-width: 370px;
           min-width: 301px;
+
           .icon {
             width: 17px;
             height: 20px;
@@ -244,14 +327,89 @@
       }
     }
   }
+
+  .hide {
+    display: none !important;
+  }
+
+  .show {
+    display: block !important;
+  }
 }
+
 .popup_open {
   overflow: hidden;
 }
+
 .popup_active {
   opacity: 1;
   visibility: visible;
+
   .content {
     transform: translate(-50%, -50%) scale(1);
   }
+}
+
+// Submit Button ******************************
+
+/* focus/disabled styles, you can change this for accessibility */
+.button:focus,
+.button:disabled {
+  outline: none;
+  background: #e6a3a3 !important;
+  border: 0 !important;
+}
+
+.spin:hover {
+  outline: none;
+  transform: translate(0) !important;
+  border: 0 !important;
+  color: #fff !important;
+}
+
+/* This is the space for the spinner to appear, applied to the button */
+.spin {
+  // padding-left: 2.5em;
+  display: block;
+}
+
+/* position of the spinner when it appears, you might have to change these values */
+.spin .spinner {
+  left: 20px;
+  top: 13px;
+  width: 20px;
+  display: block;
+  position: absolute;
+}
+
+/* spinner animation */
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* The actual spinner element is a pseudo-element */
+.spin .spinner::before {
+  content: "";
+  width: 15px;
+  /* Size of the spinner */
+  height: 15px;
+  /* Change as desired */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: solid 4px #fff;
+  /* Thickness/color of spinner track */
+  border-bottom-color: $primaryColor;
+  /* Color of variant spinner piece */
+  animation: 0.8s linear infinite spinner;
+  /* speed of spinner */
+  transform: translate(-50%, -50%);
+  will-change: transform;
 }

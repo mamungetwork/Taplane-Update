@@ -19,6 +19,7 @@ footer {
       padding-bottom: 30px;
       max-width: 680px;
       margin: 0 auto;
+      color: rgb(167, 167, 167);
     }
 
     .contact_info {
@@ -29,7 +30,7 @@ footer {
       grid-template-columns: repeat(3, 1fr);
       align-items: center;
 
-      > div {
+      >div {
         display: flex;
         align-items: center;
         text-align: left;
@@ -58,6 +59,7 @@ footer {
           font-size: 16px;
           line-height: 20px;
         }
+
         a {
           font-weight: bold;
           font-size: 16px;
@@ -71,11 +73,32 @@ footer {
 .bottom_copyright {
   width: 100%;
   background: #0a0000;
-  text-align: center;
   overflow: hidden;
 
-  p {
-    color: #fff;
+  .content {
+    width: 100%;
     padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 60px;
+    row-gap: 15px;
+    flex-wrap: wrap;
+
+    p,
+    a {
+      color: #fff;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: underline;
+      text-transform: capitalize;
+      transition: .3s;
+
+      &:hover {
+        color: $primaryColor;
+      }
+    }
   }
 }

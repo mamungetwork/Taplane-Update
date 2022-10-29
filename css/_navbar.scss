@@ -1,0 +1,79 @@
+header {
+    width: 100%;
+    transition: 0.3s;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 0;
+        align-items: center;
+        transition: 0.3s;
+
+        .brand_id {
+            height: 55px;
+            opacity: 0;
+            transform: translateY(-80px);
+            animation: navbarEntry 0.5s ease-in-out forwards;
+            transition: 0.3s;
+
+            img {
+                transition: 0.3s;
+                height: 100%;
+            }
+        }
+
+        .btn {
+            opacity: 0;
+            transform: translateY(-80px);
+            animation: navbarEntry 0.5s ease-in-out forwards;
+            animation-delay: 0.1s;
+            transition: 0.3s;
+        }
+    }
+}
+
+
+
+.nav_bg {
+    height: 90px;
+}
+
+header.nav_active {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 6px 35px rgba(0, 0, 0, 0.08);
+
+    .navbar {
+        padding: 15px 0;
+
+        a {
+            height: 45px;
+        }
+
+        .btn {
+            background: $primaryColor;
+            color: #fff;
+
+            &:hover {
+                background: #fff;
+                color: $primaryColor;
+                border-color: $primaryColor;
+            }
+        }
+    }
+}
+
+header.no_bg {
+    .btn {
+        background: $primaryColor;
+        color: #fff;
+
+        &:hover {
+            background: #fff;
+            color: $primaryColor;
+            border-color: $primaryColor;
+        }
+    }
+}

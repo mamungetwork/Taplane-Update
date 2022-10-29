@@ -4,25 +4,34 @@
     width: 20px;
     opacity: 0;
   }
+
   100% {
     transform: translate3d(500px, 0px, 0);
     width: 200px;
     opacity: 1;
   }
 }
+
 @keyframes smallCloud {
   10% {
-    opacity: 50%;
+    opacity: 30%;
   }
+
+  95% {
+    opacity: 30%;
+  }
+
   100% {
-    transform: translateX(1800px);
-    opacity: 50%;
+    transform: translateX(2000px);
+    opacity: 0%;
   }
 }
+
 @keyframes bannermove {
   0% {
     margin-left: -3840px;
   }
+
   100% {
     margin-left: 0;
   }
@@ -34,12 +43,14 @@
     transform: translateY(0);
   }
 }
+
 @keyframes h1TagEntry {
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 @keyframes spaceshipEntry {
   to {
     opacity: 1;

@@ -1,5 +1,7 @@
 .what_we_do {
+  overflow: unset;
   padding: 150px 0 100px;
+  isolation: unset;
 
   .content {
     display: grid;
@@ -8,6 +10,9 @@
     align-items: center;
 
     .left_content {
+      .top {
+        margin-bottom: 80px;
+      }
       .graphics {
         width: 100%;
         max-width: 500px;
@@ -25,28 +30,30 @@
       grid-template-columns: 1fr 1fr;
       gap: 30px;
 
+      .card_content {
+        min-height: 187px;
+        max-height: 207px;
+        transition: 0.5s;
+      }
       .card {
         text-align: center;
-        padding: 30px;
+        padding: 40px 30px 30px;
         position: relative;
         border: 1px solid transparent;
         background-color: #fff;
         border-radius: 18px;
         box-shadow: 0 3px 45px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s;
-        isolation: isolate;
-        min-height: 277px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
+        max-height: 207px;
+        overflow-y: hidden;
+        z-index: 1;
+        transition: all 0.6s !important;
         .icon {
           height: 76px;
           margin-bottom: 15px;
           transition: all 0.3s;
 
           path {
-            transition: 1s !important;
+            transition: all 1s !important;
           }
         }
         h3 {
@@ -54,14 +61,14 @@
           font-size: 20px;
           line-height: 24px;
           color: $darkColor;
-          // margin-bottom: 10px;
-          transition: all 0.3s;
+          transition: all 0.5s;
         }
         p {
-          // height: 0;
-          transition: all 0.3s;
-          visibility: hidden;
+          margin-top: 20px;
           opacity: 0;
+          visibility: hidden;
+          transition: all 0.5s !important;
+          transition-delay: 0.3s;
         }
         .left_gear,
         .right_gear,
@@ -80,27 +87,40 @@
         }
         .code,
         .code1,
-        .c_gear {
+        .c_gear,
+        .third_box,
+        .second_box,
+        .first_box {
           transition: 0.8s;
           transform-box: fill-box;
           transform-origin: center;
           transform: scale(1) rotate(0deg);
         }
 
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0px 3px 35px rgba(221, 56, 6, 0.25);
-          border: 1px solid $primaryColor;
+        .fourth_box {
+          transition: 0.8s;
+          transform-box: fill-box;
+          transform-origin: center;
+          transform: scale(0.6) rotate(0deg);
+        }
 
+        &:hover {
+          z-index: 2;
+          margin-top: -80px;
+          box-shadow: 0px 3px 45px rgba(221, 56, 6, 0.35);
+          border: 1px solid $primaryColor;
+          max-height: 563px;
+          padding: 30px;
+
+          p {
+            margin-top: 0px;
+            opacity: 1;
+            visibility: visible;
+          }
           h3 {
             margin-bottom: 10px;
           }
-          p {
-            // height: 44px;
-            position: unset;
-            visibility: visible;
-            opacity: 1;
-          }
+
           #light {
             fill: $primaryColor;
           }
@@ -142,6 +162,29 @@
 
           .cart {
             transform: translate(40px, 0);
+          }
+
+          .v2x {
+            #white {
+              transform: scale(1) rotate(180deg);
+            }
+          }
+
+          .first_box {
+            transform: translateX(15px) rotate(180deg);
+            fill: $primaryColor !important;
+          }
+          .second_box {
+            transform: rotate(-225deg);
+            fill: $primaryColor !important;
+          }
+          .third_box {
+            transform: translateX(0px) rotate(225deg);
+            fill: $primaryColor !important;
+          }
+          .fourth_box {
+            transform: scale(1) rotate(225deg) translateY(0px);
+            fill: $primaryColor !important;
           }
         }
       }

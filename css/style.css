@@ -8,10 +8,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body ::selection {
   background: #ff8161;
   color: #fff;
@@ -40,7 +36,7 @@ p {
   font-weight: normal;
   font-size: 15px;
   line-height: 22px;
-  color: #8f8f8f;
+  color: #555;
 }
 
 .btn {
@@ -68,7 +64,9 @@ p {
 }
 
 .extra_height {
-  display: none;
+  display: block;
+  height: 30px;
+  visibility: hidden;
 }
 
 /* ******************** GLOBAL STYLING END ******************** */
@@ -98,9 +96,15 @@ p {
 }
 .top h2 {
   font-weight: bold;
-  font-size: 38px;
+  font-size: 46px;
   text-transform: capitalize;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+.top p {
+  font-weight: lighter;
+  font-size: 18px;
+  line-height: 25px;
+  color: #555;
 }
 
 .landing_section,
@@ -116,66 +120,81 @@ footer,
 }
 
 /* ******************** RE-USABLE STYLING END ******************** */
-/* ******************** LANDING STYLING START ******************** */
-.landing_section {
-  height: 100vh;
-  background: #f13b0f;
-  color: #fff;
-  isolation: unset;
-}
-.landing_section header {
+/* ******************** NAVBAR STYLING START ******************** */
+header {
   width: 100%;
   transition: 0.3s;
   position: fixed;
   z-index: 99;
   top: 0;
 }
-.landing_section header .navbar {
+header .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 30px 0;
   align-items: center;
   transition: 0.3s;
 }
-.landing_section header .navbar .brand_id {
+header .navbar .brand_id {
   height: 55px;
   opacity: 0;
   transform: translateY(-80px);
   animation: navbarEntry 0.5s ease-in-out forwards;
   transition: 0.3s;
 }
-.landing_section header .navbar .brand_id img {
+header .navbar .brand_id img {
   transition: 0.3s;
   height: 100%;
 }
-.landing_section header .navbar .btn {
+header .navbar .btn {
   opacity: 0;
   transform: translateY(-80px);
   animation: navbarEntry 0.5s ease-in-out forwards;
   animation-delay: 0.1s;
   transition: 0.3s;
 }
-.landing_section .nav_bg {
+
+.nav_bg {
   height: 90px;
 }
-.landing_section header.nav_active {
+
+header.nav_active {
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 6px 35px rgba(0, 0, 0, 0.08);
 }
-.landing_section header.nav_active .navbar {
+header.nav_active .navbar {
   padding: 15px 0;
 }
-.landing_section header.nav_active .navbar a {
+header.nav_active .navbar a {
   height: 45px;
 }
-.landing_section header.nav_active .navbar .btn {
+header.nav_active .navbar .btn {
   background: #f13b0f;
   color: #fff;
 }
-.landing_section header.nav_active .navbar .btn:hover {
+header.nav_active .navbar .btn:hover {
   background: #fff;
   color: #f13b0f;
   border-color: #f13b0f;
+}
+
+header.no_bg .btn {
+  background: #f13b0f;
+  color: #fff;
+}
+header.no_bg .btn:hover {
+  background: #fff;
+  color: #f13b0f;
+  border-color: #f13b0f;
+}
+
+/* ******************** NAVBAR STYLING END ******************** */
+/* ******************** LANDING STYLING START ******************** */
+.landing_section {
+  height: 100vh;
+  background: #f13b0f;
+  color: #fff;
+  isolation: unset;
 }
 .landing_section .slider_landing {
   position: relative;
@@ -190,14 +209,16 @@ footer,
 .landing_section .content .info {
   width: 100%;
   margin-top: -150px;
+  position: relative;
+  z-index: 6;
 }
 .landing_section .content h1 {
-  font-weight: 600;
-  font-size: 47px;
+  font-weight: 800;
+  font-size: 74px;
   text-align: left;
   color: #fff;
   overflow: hidden;
-  line-height: 1;
+  line-height: 84px;
   margin-bottom: 40px;
   opacity: 0;
   transform: translateX(-150px);
@@ -212,7 +233,7 @@ footer,
   height: 100%;
 }
 .landing_section .content h2 {
-  font-size: 22px;
+  font-size: 28px;
   opacity: 0;
   transform: translateX(-150px);
   animation: h1TagEntry 0.8s ease-in-out forwards;
@@ -242,31 +263,6 @@ footer,
 }
 .landing_section .content .spaceship_container svg .shipRotation {
   transition: all 0.3s;
-}
-.landing_section .content .spaceship_container .line1 {
-  width: 60px;
-  animation: moveclouds 0.3s linear infinite;
-  animation-delay: 0;
-}
-.landing_section .content .spaceship_container .line2 {
-  animation: moveclouds 0.4s linear infinite;
-  animation-delay: 0.4s;
-}
-.landing_section .content .spaceship_container .line3 {
-  animation: moveclouds 0.3s linear infinite;
-  animation-delay: 0.8s;
-}
-.landing_section .content .spaceship_container .line4 {
-  animation: moveclouds 0.6s linear infinite;
-  animation-delay: 1s;
-}
-.landing_section .content .spaceship_container .line5 {
-  animation: moveclouds 0.2s linear infinite;
-  animation-delay: 0.2s;
-}
-.landing_section .content .spaceship_container .line6 {
-  animation: moveclouds 0.3s linear infinite;
-  animation-delay: 0.3s;
 }
 .landing_section .landing_bg {
   width: 100%;
@@ -299,63 +295,63 @@ footer,
   height: 60px;
   left: 0;
   bottom: 35%;
-  animation: smallCloud 20s linear infinite;
+  animation: smallCloud 35s linear infinite;
   animation-delay: 0;
 }
 .landing_section .landing_bg .center_cloud .cloud2 {
   height: 25px;
   left: 0;
   top: 25%;
-  animation: smallCloud 26s linear infinite;
+  animation: smallCloud 41s linear infinite;
   animation-delay: 0.8s;
 }
 .landing_section .landing_bg .center_cloud .cloud3 {
   height: 45px;
   left: 0;
   top: 45%;
-  animation: smallCloud 22s linear infinite;
+  animation: smallCloud 37s linear infinite;
   animation-delay: 1.6s;
 }
 .landing_section .landing_bg .center_cloud .cloud4 {
   height: 42px;
   left: 0;
   top: 65%;
-  animation: smallCloud 24s linear infinite;
+  animation: smallCloud 39s linear infinite;
   animation-delay: 2.4s;
 }
 .landing_section .landing_bg .center_cloud .cloud5 {
   height: 47px;
   left: 0;
   top: 15%;
-  animation: smallCloud 28s linear infinite;
+  animation: smallCloud 43s linear infinite;
   animation-delay: 3.2s;
 }
 .landing_section .landing_bg .center_cloud .cloud6 {
   height: 39px;
   left: 0;
   bottom: 40%;
-  animation: smallCloud 32s linear infinite;
+  animation: smallCloud 47s linear infinite;
   animation-delay: 4s;
 }
 .landing_section .landing_bg .center_cloud .cloud7 {
   height: 47px;
   left: 0;
   top: 25%;
-  animation: smallCloud 36s linear infinite;
+  animation: smallCloud 51s linear infinite;
   animation-delay: 4.8s;
 }
 .landing_section .landing_bg .center_cloud .cloud8 {
   height: 45px;
   left: 0;
   bottom: 30%;
-  animation: smallCloud 44s linear infinite;
+  animation: smallCloud 48s linear infinite;
   animation-delay: 5.6s;
 }
 .landing_section .landing_bg .center_cloud .cloud9 {
   height: 64px;
   left: 0;
   bottom: 50%;
-  animation: smallCloud 30s linear infinite;
+  animation: smallCloud 45s linear infinite;
   animation-delay: 6.4s;
 }
 .landing_section .landing_bg .cloud_bottom {
@@ -379,7 +375,7 @@ footer,
   display: inline-block;
 }
 .landing_section .landing_bg .cloud_bottom .cloud_bottom1 .first {
-  animation: bannermove 40s linear infinite;
+  animation: bannermove 70s linear infinite;
 }
 .landing_section .landing_bg .cloud_bottom .cloud_bottom2 {
   width: 5760px;
@@ -391,7 +387,7 @@ footer,
   display: inline-block;
 }
 .landing_section .landing_bg .cloud_bottom .cloud_bottom2 .first {
-  animation: bannermove 48s linear infinite;
+  animation: bannermove 78s linear infinite;
 }
 .landing_section .landing_bg .cloud_bottom .cloud_bottom3 {
   width: 5760px;
@@ -403,19 +399,24 @@ footer,
   display: inline-block;
 }
 .landing_section .landing_bg .cloud_bottom .cloud_bottom3 .first {
-  animation: bannermove 56s linear infinite;
+  animation: bannermove 86s linear infinite;
 }
 
 /* ******************** LANDING STYLING END ******************** */
 /* ******************** WHAT WE DO? STYLING START ******************** */
 .what_we_do {
+  overflow: unset;
   padding: 150px 0 100px;
+  isolation: unset;
 }
 .what_we_do .content {
   display: grid;
   grid-template-columns: 4fr 5fr;
   gap: 60px;
   align-items: center;
+}
+.what_we_do .content .left_content .top {
+  margin-bottom: 80px;
 }
 .what_we_do .content .left_content .graphics {
   width: 100%;
@@ -431,20 +432,23 @@ footer,
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
+.what_we_do .content .right_content .card_content {
+  min-height: 187px;
+  max-height: 207px;
+  transition: 0.5s;
+}
 .what_we_do .content .right_content .card {
   text-align: center;
-  padding: 30px;
+  padding: 40px 30px 30px;
   position: relative;
   border: 1px solid transparent;
   background-color: #fff;
   border-radius: 18px;
   box-shadow: 0 3px 45px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s;
-  isolation: isolate;
-  min-height: 277px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  max-height: 207px;
+  overflow-y: hidden;
+  z-index: 1;
+  transition: all 0.6s !important;
 }
 .what_we_do .content .right_content .card .icon {
   height: 76px;
@@ -452,19 +456,21 @@ footer,
   transition: all 0.3s;
 }
 .what_we_do .content .right_content .card .icon path {
-  transition: 1s !important;
+  transition: all 1s !important;
 }
 .what_we_do .content .right_content .card h3 {
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
   color: #333333;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 .what_we_do .content .right_content .card p {
-  transition: all 0.3s;
-  visibility: hidden;
+  margin-top: 20px;
   opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s !important;
+  transition-delay: 0.3s;
 }
 .what_we_do .content .right_content .card .left_gear,
 .what_we_do .content .right_content .card .right_gear,
@@ -483,24 +489,36 @@ footer,
 }
 .what_we_do .content .right_content .card .code,
 .what_we_do .content .right_content .card .code1,
-.what_we_do .content .right_content .card .c_gear {
+.what_we_do .content .right_content .card .c_gear,
+.what_we_do .content .right_content .card .third_box,
+.what_we_do .content .right_content .card .second_box,
+.what_we_do .content .right_content .card .first_box {
   transition: 0.8s;
   transform-box: fill-box;
   transform-origin: center;
   transform: scale(1) rotate(0deg);
 }
+.what_we_do .content .right_content .card .fourth_box {
+  transition: 0.8s;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0.6) rotate(0deg);
+}
 .what_we_do .content .right_content .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 3px 35px rgba(221, 56, 6, 0.25);
+  z-index: 2;
+  margin-top: -80px;
+  box-shadow: 0px 3px 45px rgba(221, 56, 6, 0.35);
   border: 1px solid #f13b0f;
+  max-height: 563px;
+  padding: 30px;
+}
+.what_we_do .content .right_content .card:hover p {
+  margin-top: 0px;
+  opacity: 1;
+  visibility: visible;
 }
 .what_we_do .content .right_content .card:hover h3 {
   margin-bottom: 10px;
-}
-.what_we_do .content .right_content .card:hover p {
-  position: unset;
-  visibility: visible;
-  opacity: 1;
 }
 .what_we_do .content .right_content .card:hover #light {
   fill: #f13b0f;
@@ -538,6 +556,25 @@ footer,
 }
 .what_we_do .content .right_content .card:hover .cart {
   transform: translate(40px, 0);
+}
+.what_we_do .content .right_content .card:hover .v2x #white {
+  transform: scale(1) rotate(180deg);
+}
+.what_we_do .content .right_content .card:hover .first_box {
+  transform: translateX(15px) rotate(180deg);
+  fill: #f13b0f !important;
+}
+.what_we_do .content .right_content .card:hover .second_box {
+  transform: rotate(-225deg);
+  fill: #f13b0f !important;
+}
+.what_we_do .content .right_content .card:hover .third_box {
+  transform: translateX(0px) rotate(225deg);
+  fill: #f13b0f !important;
+}
+.what_we_do .content .right_content .card:hover .fourth_box {
+  transform: scale(1) rotate(225deg) translateY(0px);
+  fill: #f13b0f !important;
 }
 
 /* ******************** WHAT WE DO? STYLING END ******************** */
@@ -586,17 +623,17 @@ footer,
 .how_we_can_help .content .left_content .hex {
   width: 100vw;
   height: 100vw;
-  max-height: 190px;
-  max-width: 190px;
+  max-height: 215px;
+  max-width: 215px;
   align-self: center;
   clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
   padding: 10px;
-  transition: 0.3s;
+  transition: all 0.3s;
   position: relative;
 }
 .how_we_can_help .content .left_content .hex h2 {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   color: #fff;
   line-height: 24px;
@@ -607,14 +644,38 @@ footer,
   position: absolute;
   top: 50%;
   left: 50%;
+  transition: 0.6s;
+  width: 170px;
   transform: translate(-50%, -50%) scale(0.5);
   opacity: 0;
-  transition: 1s;
-  width: 120px;
 }
 .how_we_can_help .content .left_content .hex h2 .active {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
+}
+.how_we_can_help .content .left_content .hex-1.active {
+  background: #c12f0c;
+}
+.how_we_can_help .content .left_content .hex-2.active {
+  background: #d43f1a;
+}
+.how_we_can_help .content .left_content .hex-3.active {
+  background: #f13609;
+}
+.how_we_can_help .content .left_content .hex-4.active {
+  background: #b12300;
+}
+.how_we_can_help .content .left_content .hex-5.active {
+  background: #f13609;
+}
+.how_we_can_help .content .left_content .hex-6.active {
+  background: #d43f1a;
+}
+.how_we_can_help .content .left_content .hex-7.active {
+  background: #c12f0c;
+}
+.how_we_can_help .content .right_content .top {
+  margin-bottom: 80px;
 }
 .how_we_can_help .content .right_content .graphics {
   width: 100%;
@@ -636,12 +697,72 @@ footer,
   width: 80%;
 }
 .how_we_can_help .bg_images .image-2 {
-  bottom: 10px;
+  bottom: 80px;
   right: 0;
   width: 95%;
 }
 
 /* ******************** WHAT WE DO? STYLING END ******************** */
+/* ******************** CLIENT LOGO STYLING START ******************** */
+.client_logo {
+  padding-top: 0px;
+  background: #fdeae5;
+}
+.client_logo .strip_container {
+  padding: 50px 0;
+  overflow: hidden;
+  position: relative;
+}
+.client_logo .strip_container .strip_lane {
+  display: flex;
+  height: 100%;
+}
+.client_logo .strip_container .strip_lane .strip_item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #343434;
+}
+@keyframes translateinfinite {
+  100% {
+    transform: translateX(-7600px);
+  }
+}
+.client_logo .strip_container .strip_lane {
+  width: 15200px;
+}
+.client_logo .strip_container .strip_lane .strip_item {
+  width: 200px;
+  animation: translateinfinite 120s linear infinite;
+}
+.client_logo .strip_container .strip_lane .strip_item .image {
+  width: auto;
+  height: 55px;
+}
+.client_logo .strip_container .strip_lane .strip_item .image img {
+  height: 100%;
+  object-fit: contain;
+}
+.client_logo .strip_container::before, .client_logo .strip_container::after {
+  content: " ";
+  position: absolute;
+  z-index: 2;
+  width: 180px;
+  height: 100%;
+}
+.client_logo .strip_container::before {
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #fdeae5 0%, rgba(253, 234, 229, 0) 100%);
+}
+.client_logo .strip_container::after {
+  top: 0;
+  right: 0;
+  background: linear-gradient(to left, #fdeae5 0%, rgba(253, 234, 229, 0) 100%);
+}
+
+/* ******************** CLIENT LOGO STYLING END ******************** */
 /* ******************** ABOUT US STYLING START ******************** */
 .about_us {
   padding: 100px 0 150px;
@@ -660,29 +781,26 @@ footer,
   width: 100%;
 }
 .about_us .more_info {
-  text-align: center;
-  margin-top: 40px;
+  text-align: left;
+  margin-bottom: 40px;
 }
 .about_us .more_info h3 {
   font-weight: bold;
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 46px;
+  line-height: 50px;
   margin-bottom: 20px;
   overflow: hidden;
 }
 .about_us .more_info p {
-  overflow: hidden;
+  font-size: 20px;
+  line-height: 30px;
 }
 .about_us .stats_section {
   width: 100%;
   isolation: isolate;
   position: relative;
-  background: #f13b0f;
   text-align: center;
-  border-radius: 24px;
-  box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.12);
-  overflow: hidden;
-  padding: 40px 60px 50px;
+  padding: 0 !important;
 }
 .about_us .stats_section h2 {
   font-weight: bold;
@@ -695,12 +813,20 @@ footer,
 .about_us .stats_section .stats_details {
   display: grid;
   justify-content: space-between;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.about_us .stats_section .stats_details .stats {
+  background: #f13b0f;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  min-width: 160px;
 }
 .about_us .stats_section .stats_details .stats h4 {
   font-weight: bold;
-  font-size: 52px;
+  font-size: 42px;
   color: #fff;
   margin-bottom: 6px;
 }
@@ -709,12 +835,17 @@ footer,
   font-size: 20px;
   color: #fff;
 }
+.about_us .stats_section .stats_details .stats2 .count span,
+.about_us .stats_section .stats_details .stats1 .count span {
+  display: none;
+}
 .about_us .stats_section .stats_bg {
   position: absolute;
   top: 0;
   left: -40px;
   z-index: -1;
   height: 100%;
+  display: none;
 }
 .about_us .stats_section .stats_bg img {
   height: 100%;
@@ -723,7 +854,7 @@ footer,
 /* ******************** ABOUT US STYLING END ******************** */
 /* ******************** CONTACT STYLING START ******************** */
 .contact {
-  padding: 130px 0;
+  padding: 230px 0;
   background: #f13b0f;
   text-align: center;
 }
@@ -732,17 +863,20 @@ footer,
 }
 .contact .content h2 {
   font-weight: normal;
-  font-size: 42px;
+  font-size: 46px;
   text-align: center;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 50px;
 }
 .contact .content p {
   color: #fff;
   margin-bottom: 50px;
 }
 .contact .content .btn {
-  font-size: 18px;
+  font-size: 26px;
+  width: 100%;
+  max-width: 320px;
+  padding: 20px 70px;
 }
 .contact .contact_bg div {
   position: absolute;
@@ -767,6 +901,87 @@ footer,
 }
 
 /* ******************** CONTACT STYLING END ******************** */
+/* ******************** CONTACT STYLING START ******************** */
+.heading_section {
+  background: #f13b0f;
+  isolation: isolate;
+  position: relative;
+  margin-top: -115px;
+}
+.heading_section .privacy_heading {
+  min-height: 60vh;
+  height: 100%;
+  padding-top: 100px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading_section .privacy_heading h2 {
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.heading_section .privacy_heading p {
+  color: #fff;
+}
+
+.privacy_content {
+  width: 100%;
+  transform: translateY(-140px);
+}
+.privacy_content .content {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.08);
+  padding: 60px;
+}
+.privacy_content .content h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #333333;
+  margin-bottom: 16px;
+}
+.privacy_content .content p {
+  font-size: 18px;
+  line-height: 180%;
+  color: #8a8a8a;
+}
+.privacy_content .content h3 {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 16px;
+}
+.privacy_content .content .list_item {
+  display: flex;
+  gap: 8px;
+}
+.privacy_content .content .list_item .icon {
+  width: 24px;
+  min-width: 24px;
+  margin-top: 5px;
+}
+.privacy_content .content .list_item .icon img {
+  width: 100%;
+}
+.privacy_content .content .list_item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.privacy_content .content .group_content:not(:last-child) {
+  margin-bottom: 60px;
+}
+.privacy_content .content .bold {
+  font-weight: 600;
+  color: #333333;
+}
+
+/* ******************** CONTACT STYLING END ******************** */
 /* ******************** Footer STYLING START ******************** */
 footer {
   padding: 60px 0 40px;
@@ -787,6 +1002,7 @@ footer .content p {
   padding-bottom: 30px;
   max-width: 680px;
   margin: 0 auto;
+  color: rgb(167, 167, 167);
 }
 footer .content .contact_info {
   width: 100%;
@@ -832,12 +1048,30 @@ footer .content .contact_info > div a {
 .bottom_copyright {
   width: 100%;
   background: #0a0000;
-  text-align: center;
   overflow: hidden;
 }
-.bottom_copyright p {
-  color: #fff;
+.bottom_copyright .content {
+  width: 100%;
   padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 60px;
+  row-gap: 15px;
+  flex-wrap: wrap;
+}
+.bottom_copyright .content p,
+.bottom_copyright .content a {
+  color: #fff;
+  text-align: center;
+}
+.bottom_copyright .content a {
+  text-decoration: underline;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+.bottom_copyright .content a:hover {
+  color: #f13b0f;
 }
 
 /* ******************** Footer STYLING END ******************** */
@@ -882,17 +1116,20 @@ footer .content .contact_info > div a {
   transform: translate(-50%, -100%) scale(0.6);
   transition: 0.3s;
   z-index: 1;
+  height: 100%;
 }
 .popup .content .form_layout {
   width: 100%;
   border-radius: 24px;
   background: #fff;
   padding: 30px;
+  transition: all 0.3s;
 }
 .popup .content h2 {
   font-weight: bold;
   font-size: 32px;
   color: #333333;
+  transition: all 0.3s;
 }
 .popup .content .close_btn {
   width: 16px;
@@ -909,18 +1146,26 @@ footer .content .contact_info > div a {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  transition: all 0.3s;
 }
 .popup .content .popup_body {
   width: 100%;
+  transition: all 0.3s;
 }
 .popup .content .popup_body form {
+  width: 100%;
+  position: relative;
+  transition: all 0.3s;
+}
+.popup .content .popup_body form .form_input {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   column-gap: 30px;
   row-gap: 20px;
+  transition: all 0.3s;
 }
 .popup .content .popup_body form .group {
   width: 100%;
@@ -942,7 +1187,8 @@ footer .content .contact_info > div a {
   margin-bottom: 9px;
   margin-left: 10px;
 }
-.popup .content .popup_body form .field_group .field {
+.popup .content .popup_body form .field_group .field,
+.popup .content .popup_body form .field_group #project {
   width: 100%;
   height: 55px;
   line-height: 55px;
@@ -957,17 +1203,24 @@ footer .content .contact_info > div a {
   transition: 0.3s;
   outline: 0;
 }
-.popup .content .popup_body form .field_group .field ::placeholder {
-  color: #8f8f8f;
+.popup .content .popup_body form .field_group .field ::placeholder,
+.popup .content .popup_body form .field_group #project ::placeholder {
+  color: #555;
 }
-.popup .content .popup_body form .field_group .field:hover {
+.popup .content .popup_body form .field_group .field:focus,
+.popup .content .popup_body form .field_group #project:focus {
+  border-color: rgb(28, 190, 69);
+  background: #fff;
+}
+.popup .content .popup_body form .field_group .field:hover,
+.popup .content .popup_body form .field_group #project:hover {
   border-color: #fbcec3;
   background: #fff;
   box-shadow: 0 0 35px rgba(241, 60, 15, 0.1);
 }
-.popup .content .popup_body form .field_group .field:focus {
-  border-color: #f13b0f;
-  background: #fff;
+.popup .content .popup_body form .field_group .field:input:internal-autofill-selected,
+.popup .content .popup_body form .field_group #project:input:internal-autofill-selected {
+  background-color: #f13b0f !important;
 }
 .popup .content .popup_body form .field_group #message {
   height: 120px;
@@ -975,7 +1228,8 @@ footer .content .contact_info > div a {
   padding-top: 15px;
   max-width: 990px;
 }
-.popup .content .popup_body form .message {
+.popup .content .popup_body form .message,
+.popup .content .popup_body form .dropdown {
   max-width: 100%;
 }
 .popup .content .popup_body form .btn {
@@ -983,13 +1237,50 @@ footer .content .contact_info > div a {
   border-color: #f13b0f;
   color: #fff;
   max-width: 482px;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
 }
 .popup .content .popup_body form .btn:hover {
   color: #f13b0f;
   background: #fff;
   font-size: 16px;
 }
+.popup .content .popup_body form .form_success {
+  width: 100%;
+  top: 100px;
+  text-align: center;
+  display: none;
+  padding: 20px 0;
+  transition: all 0.3s;
+}
+.popup .content .popup_body form .form_success .success_content {
+  transition: all 0.3s;
+  width: 100%;
+}
+.popup .content .popup_body form .form_success .success_content .image {
+  height: 260px;
+  margin-bottom: 40px;
+}
+.popup .content .popup_body form .form_success .success_content .image img {
+  height: 100%;
+}
+.popup .content .popup_body form .form_success .success_content h2 {
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+.popup .content .popup_body form .form_success .success_content p {
+  font-size: 18px;
+  max-width: 500px;
+  margin: 0 auto 30px;
+  line-height: 26px;
+}
+.popup .content .popup_body form .form_success .success_content .btn {
+  display: inline-block;
+}
 .popup .content .popup_footer {
+  transition: all 0.3s;
   margin-top: 50px;
 }
 .popup .content .popup_footer h2 {
@@ -1066,6 +1357,12 @@ footer .content .contact_info > div a {
   min-width: 17px;
   min-height: 20px;
 }
+.popup .hide {
+  display: none !important;
+}
+.popup .show {
+  display: block !important;
+}
 
 .popup_open {
   overflow: hidden;
@@ -1077,6 +1374,65 @@ footer .content .contact_info > div a {
 }
 .popup_active .content {
   transform: translate(-50%, -50%) scale(1);
+}
+
+/* focus/disabled styles, you can change this for accessibility */
+.button:focus,
+.button:disabled {
+  outline: none;
+  background: #e6a3a3 !important;
+  border: 0 !important;
+}
+
+.spin:hover {
+  outline: none;
+  transform: translate(0) !important;
+  border: 0 !important;
+  color: #fff !important;
+}
+
+/* This is the space for the spinner to appear, applied to the button */
+.spin {
+  display: block;
+}
+
+/* position of the spinner when it appears, you might have to change these values */
+.spin .spinner {
+  left: 20px;
+  top: 13px;
+  width: 20px;
+  display: block;
+  position: absolute;
+}
+
+/* spinner animation */
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* The actual spinner element is a pseudo-element */
+.spin .spinner::before {
+  content: "";
+  width: 15px;
+  /* Size of the spinner */
+  height: 15px;
+  /* Change as desired */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: solid 4px #fff;
+  /* Thickness/color of spinner track */
+  border-bottom-color: #f13b0f;
+  /* Color of variant spinner piece */
+  animation: 0.8s linear infinite spinner;
+  /* speed of spinner */
+  transform: translate(-50%, -50%);
+  will-change: transform;
 }
 
 /* ******************** POPUP STYLING END ******************** */
@@ -1095,11 +1451,14 @@ footer .content .contact_info > div a {
 }
 @keyframes smallCloud {
   10% {
-    opacity: 50%;
+    opacity: 30%;
+  }
+  95% {
+    opacity: 30%;
   }
   100% {
-    transform: translateX(1800px);
-    opacity: 50%;
+    transform: translateX(2000px);
+    opacity: 0%;
   }
 }
 @keyframes bannermove {
@@ -1130,24 +1489,39 @@ footer .content .contact_info > div a {
 }
 /* ******************** ANIMATION STYLING END ******************** */
 /* ******************** RESPONSIVE STYLING START ******************** */
+@media screen and (max-width: 1280px) {
+  .landing_section .content {
+    padding: 0;
+  }
+}
 @media screen and (max-width: 1220px) {
   .landing_section .content .info {
     height: 342px;
     margin-top: 0;
   }
   .landing_section .content .info h1 {
-    font-size: 38px;
+    font-size: 60px;
+    line-height: 70px;
   }
   .landing_section .content .spaceship_container svg {
     height: 575px;
     width: 100%;
   }
   .how_we_can_help .content .left_content .hex {
-    max-width: 170px;
-    max-height: 170px;
+    max-width: 180px;
+    max-height: 180px;
+  }
+  .how_we_can_help .content .left_content .hex h2 {
+    font-size: 18px;
+  }
+  .how_we_can_help .content .left_content .hex h2 b {
+    width: 140px;
   }
   .about_us .information {
     grid-template-columns: 1fr 1fr;
+  }
+  .about_us .stats_section {
+    padding: 30px;
   }
 }
 @media screen and (max-width: 950px) {
@@ -1211,18 +1585,24 @@ footer .content .contact_info > div a {
     margin: 0 auto 20px;
   }
   .about_us .stats_section .stats_details {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .contact .contact_bg .left-image {
     width: 85%;
   }
+  .what_we_do .content .right_content .card,
+.what_we_do .content .right_content .card_content {
+    max-height: 100%;
+  }
+  .what_we_do .content .right_content .card:hover,
+.what_we_do .content .right_content .card_content:hover {
+    margin: 0;
+  }
   .what_we_do .content .right_content .card p {
-    height: auto;
     visibility: visible;
     opacity: 1;
-  }
-  .what_we_do .content .right_content .card h3 {
-    margin-bottom: 10px;
+    margin: 0;
+    visibility: visible;
   }
   footer .content .contact_info {
     grid-template-columns: repeat(2, 1fr);
@@ -1242,13 +1622,55 @@ footer .content .contact_info > div a {
     grid-column-start: 1;
     grid-column-end: 3;
   }
+  .how_we_can_help .content .left_content .hex {
+    max-width: 215px;
+    max-height: 215px;
+  }
+  .how_we_can_help .content .left_content .hex h2 {
+    font-size: 20px;
+  }
+  .how_we_can_help .content .left_content .hex h2 b {
+    width: 170px;
+  }
+  .about_us .more_info {
+    text-align: center;
+  }
+  .what_we_do .content .right_content .card_content {
+    height: 100%;
+    max-height: unset;
+  }
+  .what_we_do .content .right_content .card_content .card {
+    height: 100%;
+    max-height: unset;
+    padding: 30px;
+  }
+  .what_we_do .content .right_content .card_content .card h3 {
+    margin-bottom: 10px;
+  }
+  .client_logo .strip_container .strip_lane {
+    width: 12920px;
+  }
+  .client_logo .strip_container .strip_lane .strip_item {
+    width: 170px;
+  }
+  .client_logo .strip_container .strip_lane .strip_item .image {
+    width: auto;
+    height: 50px;
+  }
+  .client_logo .strip_container::before, .client_logo .strip_container::after {
+    width: 80px;
+    height: 100%;
+  }
+  .privacy_content .content {
+    padding: 40px;
+  }
 }
 @media screen and (max-width: 600px) {
   .navbar .btn {
     padding: 12px 25px;
     font-size: 14px;
   }
-  .landing_section header .navbar .brand_id {
+  header .navbar .brand_id {
     height: 30px;
   }
   .navbar {
@@ -1256,21 +1678,15 @@ footer .content .contact_info > div a {
   }
   .landing_section .content h2 {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    min-height: 50px;
+    font-size: 26px;
+    line-height: 32px;
+    min-height: 96px;
   }
   .container {
     padding: 0 20px;
   }
-  h1 {
-    font-size: 28px;
-  }
   .top h2 {
-    font-size: 26px;
+    font-size: 36px;
   }
   .what_we_do .content .right_content {
     grid-template-columns: 1fr;
@@ -1286,8 +1702,15 @@ footer .content .contact_info > div a {
   .how_we_can_help .content .left_content .hex-layer-2 {
     margin-top: -40px;
   }
+  .how_we_can_help .content .left_content .hex {
+    max-width: 175px;
+    max-height: 175px;
+  }
   .how_we_can_help .content .left_content .hex h2 {
     font-size: 16px;
+  }
+  .how_we_can_help .content .left_content .hex h2 b {
+    width: 130px;
   }
   .how_we_can_help .bg_images .image-1 {
     left: -50px;
@@ -1297,8 +1720,8 @@ footer .content .contact_info > div a {
     width: 150%;
   }
   .about_us .information .right_content h3 {
-    font-size: 28px;
-    line-height: 32px;
+    font-size: 36px;
+    line-height: 42px;
   }
   .about_us .stats_section .stats_details {
     grid-template-columns: repeat(1, 1fr);
@@ -1348,8 +1771,42 @@ footer .content .contact_info > div a {
   .popup .content .popup_body form .field_group {
     max-width: 100%;
   }
-  .landing_section header.nav_active .navbar a {
+  header.nav_active .navbar a {
     height: 30px;
+  }
+  .landing_section .content .info h1 {
+    font-size: 52px;
+    line-height: 60px;
+  }
+  .popup .content .popup_body form .form_success .success_content .image {
+    width: 100%;
+    height: unset;
+  }
+  .popup .content .popup_body form .form_success .success_content .image img {
+    width: 100%;
+    object-fit: contain;
+  }
+  .client_logo .strip_container .strip_lane {
+    width: 8360px;
+  }
+  .client_logo .strip_container .strip_lane .strip_item {
+    width: 110px;
+  }
+  .client_logo .strip_container::before, .client_logo .strip_container::after {
+    width: 60px;
+  }
+  .bottom_copyright .content {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .privacy_content .content {
+    padding: 24px;
+  }
+  .privacy_content .content .list_item .icon {
+    width: 16px;
+    min-width: 16px;
+    margin-top: 6px;
   }
 }
 @media screen and (max-width: 380px) {
@@ -1361,6 +1818,11 @@ footer .content .contact_info > div a {
     left: -6%;
     height: 60%;
     top: 0;
+  }
+  .privacy_content .content p {
+    font-size: 16px;
+    line-height: 170%;
+    color: #8a8a8a;
   }
 }
 @media screen and (max-width: 321px) {

@@ -1,10 +1,17 @@
+@media screen and (max-width: 1280px) {
+  .landing_section .content {
+    padding: 0;
+  }
+}
+
 @media screen and (max-width: 1220px) {
   .landing_section .content .info {
     height: 342px;
     margin-top: 0;
 
     h1 {
-      font-size: 38px;
+      font-size: 60px;
+      line-height: 70px;
     }
   }
 
@@ -14,12 +21,26 @@
   }
 
   .how_we_can_help .content .left_content .hex {
-    max-width: 170px;
-    max-height: 170px;
+    max-width: 180px;
+    max-height: 180px;
+
+    h2 {
+      font-size: 18px;
+
+      b {
+        width: 140px;
+      }
+    }
   }
+
   .about_us .information {
     grid-template-columns: 1fr 1fr;
   }
+
+  .about_us .stats_section {
+    padding: 30px;
+  }
+
   // .about_us .stats_section {
   //   margin-top: 60px;
   // }
@@ -29,6 +50,7 @@
   .landing_section {
     height: 100%;
   }
+
   .landing_section .content {
     grid-template-columns: 1fr;
     padding-top: 100px;
@@ -43,6 +65,7 @@
       text-align: center;
     }
   }
+
   .landing_section .content .spaceship_container {
     width: 100%;
     height: 100%;
@@ -54,6 +77,7 @@
       height: 100%;
     }
   }
+
   .what_we_do .content {
     grid-template-columns: 1fr;
     gap: 60px;
@@ -63,6 +87,7 @@
       margin: 0 auto;
     }
   }
+
   .top {
     max-width: 500px;
     margin: 0 auto;
@@ -79,6 +104,7 @@
     align-items: center;
     text-align: center;
   }
+
   .about_us .information {
     grid-template-columns: 1fr;
     text-align: center;
@@ -87,41 +113,114 @@
     .left_content .image {
       margin: 0 auto;
     }
+
     .right_content h3 {
       margin: 0 auto 20px;
     }
   }
+
   .about_us .stats_section .stats_details {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
+
   .contact .contact_bg .left-image {
     width: 85%;
   }
+
+  .what_we_do .content .right_content .card,
+  .what_we_do .content .right_content .card_content {
+    max-height: 100%;
+
+    &:hover {
+      margin: 0;
+    }
+  }
+
   .what_we_do .content .right_content .card p {
-    height: auto;
     visibility: visible;
     opacity: 1;
+    margin: 0;
+    visibility: visible;
   }
-  .what_we_do .content .right_content .card h3 {
-    margin-bottom: 10px;
-  }
+
   footer .content .contact_info {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
-  footer .content .contact_info > div {
+
+  footer .content .contact_info>div {
     justify-content: flex-start;
   }
+
   .popup .content .popup_footer .contact_info {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    > div {
+
+    >div {
       max-width: 100% !important;
     }
+
     .address {
       grid-column-start: 1;
       grid-column-end: 3;
     }
+  }
+
+  .how_we_can_help .content .left_content .hex {
+    max-width: 215px;
+    max-height: 215px;
+
+    h2 {
+      font-size: 20px;
+
+      b {
+        width: 170px;
+      }
+    }
+  }
+
+  .about_us .more_info {
+    text-align: center;
+  }
+
+  .what_we_do .content .right_content .card_content {
+    height: 100%;
+    max-height: unset;
+
+    .card {
+      height: 100%;
+      max-height: unset;
+      padding: 30px;
+
+      h3 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .client_logo .strip_container {
+    .strip_lane {
+      width: calc(170px * 76);
+
+      .strip_item {
+        width: 170px;
+
+        .image {
+          width: auto;
+          height: 50px;
+        }
+      }
+    }
+
+    &::before,
+    &::after {
+      width: 80px;
+      height: 100%;
+    }
+  }
+
+  .privacy_content .content {
+    padding: 40px;
   }
 }
 
@@ -130,65 +229,83 @@
     padding: 12px 25px;
     font-size: 14px;
   }
-  .landing_section header .navbar .brand_id {
+
+  header .navbar .brand_id {
     height: 30px;
   }
+
   .navbar {
     align-items: center;
   }
+
   .landing_section .content h2 {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    min-height: 50px;
+    font-size: 26px;
+    line-height: 32px;
+    min-height: 96px;
   }
+
   .container {
     padding: 0 20px;
   }
 
-  h1 {
-    font-size: 28px;
-  }
   .top h2 {
-    font-size: 26px;
+    font-size: 36px;
   }
+
   .what_we_do .content .right_content {
     grid-template-columns: 1fr;
   }
+
   .how_we_can_help .content .left_content .hex-layer-3 {
     margin: 20px 0px;
     grid-template-columns: repeat(2, 0fr);
   }
+
   .hex.hex-5 {
     margin-top: -20px;
     left: 50%;
   }
+
   .how_we_can_help .content .left_content .hex-layer-2 {
     margin-top: -40px;
   }
-  .how_we_can_help .content .left_content .hex h2 {
-    font-size: 16px;
+
+  .how_we_can_help .content .left_content .hex {
+    max-width: 175px;
+    max-height: 175px;
+
+    h2 {
+      font-size: 16px;
+
+      b {
+        width: 130px;
+      }
+    }
   }
+
   .how_we_can_help .bg_images .image-1 {
     left: -50px;
     width: 150%;
   }
+
   .how_we_can_help .bg_images .image-2 {
     width: 150%;
   }
+
   .about_us .information .right_content h3 {
-    font-size: 28px;
-    line-height: 32px;
+    font-size: 36px;
+    line-height: 42px;
   }
+
   .about_us .stats_section .stats_details {
     grid-template-columns: repeat(1, 1fr);
   }
+
   .about_us .stats_section {
     padding: 40px 30px 50px;
   }
+
   footer .content .contact_info {
     grid-template-columns: repeat(1, 1fr);
     gap: 30px;
@@ -199,19 +316,24 @@
     height: 30px;
     visibility: hidden;
   }
+
   .what_we_do .content .right_content .card::before {
     margin-left: -10px;
   }
+
   .popup .content .popup_footer .contact_info {
     grid-template-columns: 1fr;
+
     .address {
       grid-column-start: unset;
       grid-column-end: unset;
     }
   }
+
   .popup .content .popup_body form .group {
     flex-wrap: wrap;
   }
+
   .popup .content .form_layout {
     padding: 20px;
     border-radius: 16px;
@@ -219,60 +341,127 @@
     h2 {
       font-size: 24px;
     }
+
     .popup_footer .contact_info .address {
       min-width: unset;
     }
-    .popup_footer .contact_info > div {
+
+    .popup_footer .contact_info>div {
       height: unset;
     }
   }
+
   .popup .content {
     height: 100%;
     width: calc(100vw - 40px);
   }
+
   .popup .content .popup_body form .field_group {
     max-width: 100%;
   }
-  .landing_section header.nav_active .navbar a {
+
+  header.nav_active .navbar a {
     height: 30px;
   }
+
+  .landing_section .content .info h1 {
+    font-size: 52px;
+    line-height: 60px;
+  }
+
+  .popup .content .popup_body form .form_success .success_content .image {
+    width: 100%;
+    height: unset;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .client_logo .strip_container {
+    .strip_lane {
+      width: calc(110px * 76);
+
+      .strip_item {
+        width: 110px;
+      }
+    }
+
+    &::before,
+    &::after {
+      width: 60px;
+    }
+  }
+
+  .bottom_copyright .content {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .privacy_content .content {
+    padding: 24px;
+  }
+
+  .privacy_content .content .list_item .icon {
+    width: 16px;
+    min-width: 16px;
+    margin-top: 6px;
+  }
 }
+
 @media screen and (max-width: 380px) {
   .contact .contact_bg .left-image {
     width: 150%;
   }
+
   .contact .contact_bg .right-image {
     bottom: 0;
     left: -6%;
     height: 60%;
     top: 0;
   }
+
+  .privacy_content .content p {
+    font-size: 16px;
+    line-height: 170%;
+    color: #8a8a8a;
+  }
 }
+
 @media screen and (max-width: 321px) {
   .landing_section .content .info h1 {
     font-size: 28px;
   }
+
   .top h2,
   .about_us .stats_section h2 {
     font-size: 24px;
   }
+
   .how_we_can_help .content .left_content .hex {
     max-width: 150px;
     max-height: 150px;
   }
+
   .about_us .stats_section .stats_details .stats h4 {
     font-size: 42px;
   }
+
   .contact .content h2 {
     font-size: 30px;
     font-weight: 600;
   }
+
   .btn {
     padding: 16px 50px;
     width: 100%;
   }
 }
+
 @media screen and (min-width: 1921px) {
+
   //For Projectors or Higher Resolution Screens (Full HD)
   .landing_section .slider_landing {
     top: 40%;
