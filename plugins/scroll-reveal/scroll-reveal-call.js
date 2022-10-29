@@ -59,14 +59,7 @@ ScrollReveal().reveal(".card h3", {
   easing: "cubic-bezier(.56,.34,.4,1)",
   interval: 50,
 });
-ScrollReveal().reveal(".card .desc", {
-  delay: 600,
-  duration: 500,
-  distance: "20px",
-  origin: "bottom",
-  easing: "cubic-bezier(.56,.34,.4,1)",
-  interval: 50,
-});
+
 /* ***************************** WHAT WE DO SECTION REVEAL END ***************************** */
 
 /* ***************************** ABOUT SECTION REVEAL Start ***************************** */
@@ -150,12 +143,13 @@ ScrollReveal().reveal(
   }
 );
 
-ScrollReveal().reveal(".bottom_copyright p", {
-  delay: 1200,
+ScrollReveal().reveal(".bottom_copyright p, .bottom_copyright a", {
+  delay: 300,
   duration: 500,
   distance: "40px",
   origin: "bottom",
   easing: "cubic-bezier(.56,.34,.4,1)",
+  interval: 100,
 });
 ScrollReveal().reveal(
   "footer .contact_info div div, footer .contact_info div a, footer .contact_info div p",
@@ -172,3 +166,27 @@ ScrollReveal().reveal(
   }
 );
 /* ***************************** FOOTER SECTION REVEAL END ***************************** */
+
+ScrollReveal().reveal(".privacy_heading p, .privacy_heading h2", {
+  delay: 0,
+  // duration: 250,
+  distance: "60px",
+  origin: "bottom",
+  easing: "cubic-bezier(.56,.34,.4,1)",
+  interval: 100,
+});
+
+ScrollReveal().reveal(
+  ".privacy_content p, .privacy_content h2, .privacy_content h3, .privacy_content .icon",
+  {
+    delay: 0,
+    // duration: 250,
+    distance: "60px",
+    origin: "bottom",
+    easing: "cubic-bezier(.56,.34,.4,1)",
+    interval: 100,
+    viewOffset: {
+      bottom: 0,
+    },
+  }
+);
