@@ -134,98 +134,90 @@
                         </div>
                     </div>
                     <div class="image spaceship_container">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px"
-                            viewBox="0 0 600 600" enable-background="new 0 0 600 600" xml:space="preserve">
-                            <defs>
-                                <filter id="glow" y="-50%" height="200%">
-                                    <feGaussianBlur stdDeviation="5 5" result="coloredBlur" />
-                                    <feOffset dx="0" dy="0" result="offsetblur"></feOffset>
-                                    <feFlood id="glowAlpha" flood-color="#E9CD08" flood-opacity="0"></feFlood>
-                                    <feComposite in2="offsetblur" operator="in"></feComposite>
-                                    <feMerge>
-                                        <feMergeNode></feMergeNode>
-                                        <feMergeNode in="SourceGraphic"></feMergeNode>
-                                    </feMerge>
-                                </filter>
-                                <filter id="edgeClean" color-interpolation-filters="sRGB">
-                                    <feComponentTransfer>
-                                        <feFuncA type="table" tableValues="0 .5 1 1" />
-                                    </feComponentTransfer>
-                                </filter>
-                            </defs>
+                        <div id="app">
+                            <rocket></rocket>
+                        </div>
 
-                            <g class="speedLineGroup" stroke-width="2">
-                                <line class="line1" fill="none" stroke="#ffffff" x1="71.3" y1="341.3" x2="150"
-                                    y2="341.3" />
-                                <line class="line2" fill="none" stroke="#ffffff" x1="400" y1="143.3" x2="478.3"
-                                    y2="143.3" />
+                        <template id="rocket">
+                            <div class="rocket-wrap" :class="{'fly': flying}">
+                                <div class="galaxy">
+                                    <div v-for="(field, key) in space" :class="key" class="field">
+                                        <div v-for="(distanceLayer, key) in field" class="distance-layer" :class="key">
+                                            <div v-for="star in distanceLayer" class="star"
+                                                :style="'top:'+star.top+'px;left:'+star.left+'px;'">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="moon">
+                                        <div class="crater"></div>
+                                        <div class="crater-2"></div>
+                                        <div class="crater-3"></div>
+                                    </div>
+                                    <div class="earth"></div>
+                                </div>
+                                <div v-if="counting" class="countdown">
+                                    <span class="count">{{ countdown }}</span>
+                                </div>
+                                <div class="rocket">
+                                    <svg width="173" height="592" viewBox="0 0 173 592" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="rocket">
+                                            <path id="smoke"
+                                                d="M66.07 255.58H104.6L114.6 591.54H56.07L66.07 255.58V255.58Z"
+                                                fill="url(#paint0_linear_4_3)" />
+                                            <path id="flame" class="exhaust-flame"
+                                                d="M100.06 265.92C100.06 258.14 93.75 251.83 85.97 251.83C78.19 251.83 71.88 258.14 71.88 265.92C71.88 265.92 70.06 299.24 85.97 316.97C101.88 299.23 100.06 265.92 100.06 265.92Z"
+                                                fill="#C82800" />
+                                            <g id="rocket-body">
+                                                <path id="Path 11"
+                                                    d="M36.76 189.62C36.76 189.62 -16 215.17 4.9 290.53C4.9 290.53 16.06 252.65 51.86 242.84L36.75 189.62H36.76Z"
+                                                    fill="#FFA994" />
+                                                <path id="Path 12"
+                                                    d="M135.65 189.62C135.65 189.62 188.41 215.17 167.51 290.53C167.51 290.53 156.35 252.65 120.55 242.84L135.65 189.62V189.62Z"
+                                                    fill="#FFA994" />
+                                                <path id="Path 13"
+                                                    d="M103.33 258.55H67.47C66.05 258.55 64.83 257.57 64.52 256.19L62.55 247.51C62.18 245.88 63.2 244.26 64.84 243.89C65.06 243.84 65.28 243.81 65.51 243.81H105.31C106.98 243.81 108.34 245.16 108.34 246.84C108.34 247.07 108.31 247.29 108.26 247.51L106.29 256.19C105.98 257.57 104.75 258.55 103.34 258.55H103.33Z"
+                                                    fill="#C82800" />
+                                                <path id="Path 14"
+                                                    d="M33.64 169.26C33.64 169.26 39.14 219.8 56.16 251.82C56.16 251.82 83.18 238.81 115.21 251.82C115.21 251.82 134.73 224.8 138.73 165.25C141.04 130.94 138.28 91.76 126.92 58.01H47.54C36.98 85.5 29.46 122.42 33.64 169.25V169.26Z"
+                                                    fill="#FFEAE5" />
+                                                <path id="Path 15"
+                                                    d="M79.83 3.25999C71.85 12.29 58.16 30.4 47.54 58.02H126.91C119.64 36.42 108.85 17.04 93.58 2.58999C89.72 -1.03001 83.67 -0.840005 80.05 3.01999C79.98 3.09999 79.9 3.17999 79.83 3.25999V3.25999Z"
+                                                    fill="#C82800" />
+                                                <path id="Path 16"
+                                                    d="M84.79 166.82C84.79 166.82 60.45 222.14 84.79 287.91C84.79 287.91 111.84 233.03 84.79 166.82V166.82Z"
+                                                    fill="#FFA994" />
+                                                <path id="Ellipse 194" class="window"
+                                                    d="M87.07 146.11C103.981 146.11 117.69 132.401 117.69 115.49C117.69 98.579 103.981 84.87 87.07 84.87C70.159 84.87 56.45 98.579 56.45 115.49C56.45 132.401 70.159 146.11 87.07 146.11Z"
+                                                    fill="#C82800" />
+                                                <path id="Ellipse 195"
+                                                    d="M87.07 136.75C98.8116 136.75 108.33 127.232 108.33 115.49C108.33 103.748 98.8116 94.23 87.07 94.23C75.3284 94.23 65.81 103.748 65.81 115.49C65.81 127.232 75.3284 136.75 87.07 136.75Z"
+                                                    fill="#FFA994" />
+                                            </g>
+                                        </g>
+                                        <defs>
+                                            <linearGradient id="paint0_linear_4_3" x1="87.1579" y1="257.026"
+                                                x2="87.1579" y2="592.986" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="white" />
+                                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
 
-                                <line class="line3" fill="none" stroke="#ffffff" x1="200" y1="45.3" x2="300"
-                                    y2="45.3" />
-
-                                <line class="line4" fill="none" stroke="#ffffff" x1="230" y1="262.3" x2="320"
-                                    y2="262.3" />
-
-                                <line class="line5" fill="none" stroke="#ffffff" x1="350" y1="291.3" x2="450"
-                                    y2="291.3" />
-                                <line class="line6" fill="none" stroke="#ffffff" x1="150" y1="113.3" x2="250"
-                                    y2="113.3" />
-
-                            </g>
-
-                            <g class="ship">
-                                <g class="shipRotation">
-                                    <defs>
-                                        <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1"
-                                            gradientUnits="objectBoundingBox">
-                                            <stop offset="0" stop-color="#fff" />
-                                            <stop offset="1" stop-color="#fff" stop-opacity="0" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path id="bottom-light" d="M-2.735,0H41.983L79.248,468H-40Z"
-                                        transform="translate(280.476 211.747)" fill="url(#linear-gradient)" />
-                                    <circle class="light" fill="#C82800" cx="402.3" cy="191.5" r="4" />
-                                    <circle class="light" fill="#C82800" cx="206.3" cy="187.5" r="4" />
-                                    <g filter="url(#edgeClean)">
-                                        <path fill="#C82800" d="M431.5,217.6C417.3,239,363.8,255,300,255s-117.3-16-131.5-37.4c-0.1,0.7-0.1,1.4-0.1,2.1
-                        		c0,27,58.9,48.9,131.7,48.9s131.7-21.9,131.7-48.9C431.7,219,431.6,218.3,431.5,217.6z" />
-                                        <path class="ship-top" fill="#FFBFAF" d="M300,255c63.8,0,117.3-16,131.5-37.4c-2-17.1-27.6-31.9-65.1-40c1.2,3.1,2.2,6.3,2.9,9.6
-                        		c-18.2,10.8-42.1,17.2-68.2,17.2c-26.1,0-50-6.5-68.3-17.2c0.8-3.5,1.8-6.8,3.1-10.1c-38.8,8-65.5,23.1-67.5,40.6
-                        		C182.7,239,236.2,255,300,255z" />
-                                    </g>
-                                    <path class="alien" fill="none"
-                                        d="M300.1,170.7c-0.9,0-1.4,0.5-1.4,1.4c0,0.9,0.5,1.4,1.4,1.4c0.9,0,1.4-0.5,1.4-1.4
-                        	C301.5,171.1,301,170.7,300.1,170.7z M300.1,170.7c-0.9,0-1.4,0.5-1.4,1.4c0,0.9,0.5,1.4,1.4,1.4c0.9,0,1.4-0.5,1.4-1.4
-                        	C301.5,171.1,301,170.7,300.1,170.7z M327.2,174.9c-2.2-2.4-4.4-4.5-7.2-6.3c0.5-0.9,1-1.9,1.1-3c0.1-1.6-0.2-3.2-1-4.7
-                        	c-0.7-1.3-1.6-2.4-2.7-3.2c0.1-0.2,0.1-0.5,0.1-0.7c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3c0,1.7,1.4,3,3,3c0.9,0,1.8-0.4,2.3-1.1
-                        	c1.2,1.8,1.8,3.6,1.8,5.4c0,1-0.2,2-0.6,2.9c-6-3.3-12.2-5-18.7-5c-6.6,0-12.8,1.6-18.7,4.9c-0.4-1-0.6-2-0.6-3c0-2,0.6-3.8,1.8-5.3
-                        	c0.5,0.7,1.4,1.2,2.4,1.2c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3c0,0.3,0,0.6,0.1,0.8l-1,1c-1.3,1.4-2.1,2.4-2.3,3
-                        	c-0.4,1-0.6,2.1-0.6,3.1c0,1.2,0.3,2.4,0.9,3.5c-2.7,1.8-5.2,4-7.4,6.5c7.1,7.9,15.2,13.3,26.2,13.8v2.9c-3,0.8-5.7,2.6-7.8,6.3
-                        	c-1.1,2-1.7,4.1-2.1,6c4.4,0.4,8.9,0.6,13.5,0.6c3.3,0,6.6-0.1,9.8-0.3c-0.5-2.2-1.5-4.6-2.7-6.7c-2-3.7-4.8-5.1-7.8-6v-2.9
-                        	C311.3,188.3,319.9,182.9,327.2,174.9z M300.2,167.2c3.2,0,4.8,1.6,4.8,4.8c0,3.2-1.6,4.8-4.8,4.8c-3.3,0-4.9-1.6-4.9-4.8
-                        	C295.3,168.8,296.9,167.2,300.2,167.2z M299.3,184.3c-3.2,0-6.3-0.3-8.9-0.8c-4-0.8-6.2-2-6.2-3.7v-0.4c0,0.9,2.3,1.4,5.1,2.1
-                        	c2.8,0.6,6.4-0.3,10.4-0.3c2.5,0,5.5,1,8.2,0.6c4-0.6,5.1-1.2,6-2.2l0.1,0.2c0,1-0.3,2.1-1.5,2.6C309.6,183.8,305,184.3,299.3,184.3
-                        	z M300.1,173.4c0.9,0,1.4-0.5,1.4-1.4c0-0.9-0.5-1.4-1.4-1.4c-0.9,0-1.4,0.5-1.4,1.4C298.7,172.9,299.2,173.4,300.1,173.4z" />
-                                    <path fill="#FFEAE5" filter="url(#edgeClean)" opacity="1"
-                                        d="M302.645,205.926c26.69,0,51.131-6.647,69.742-17.589a64.009,64.009,0,0,0-2.966-9.817A71.556,71.556,0,0,0,232.8,188.337C251.514,199.279,275.954,205.926,302.645,205.926Z"
-                                        transform="translate(-2.493 -0.813)" />
-                                    <path id="Subtraction_6" data-name="Subtraction 6"
-                                        d="M-1032.855,930.826a152.4,152.4,0,0,1-37.913-4.691,124.7,124.7,0,0,1-31.931-12.9c.342-1.5.721-2.959,1.127-4.35,19.21,10.923,43.614,16.939,68.717,16.939,25.148,0,49.525-6.019,68.638-16.949.431,1.467.8,2.934,1.1,4.36a123.461,123.461,0,0,1-31.841,12.9A152.191,152.191,0,0,1-1032.855,930.826Z"
-                                        transform="translate(1333.007 -725.713)" fill="#C82800"></path>
-                                    <path fill="#FFF3F1" opacity="1"
-                                        d="M343,191.8c4.8-1.8,9.2-3.9,13.3-6.3c-5.2-23.7-26.2-41.6-51.4-42C322.8,150.1,337.1,168.3,343,191.8z" />
-                                    <g filter="url(#edgeClean)">
-                                        <circle class="light" fill="#C82800" cx="198.3" cy="207.5" r="4" />
-                                        <circle class="light" fill="#C82800" cx="233.3" cy="223.5" r="4" />
-                                        <circle class="light" fill="#C82800" cx="277.3" cy="231.5" r="4" />
-                                        <circle class="light" fill="#C82800" cx="323.3" cy="234.5" r="4" />
-                                        <circle class="light" fill="#C82800" cx="366.3" cy="224.5" r="4" />
-                                        <circle class="light" fill="#C82800" cx="402.3" cy="207.5" r="4" />
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
+                                <ul class="exhaust-fumes">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -1125,8 +1117,9 @@
     <!-- Slider Text Change  -->
     <script type="text/javascript" src="plugins/landing-text-chnage/splitting.js"></script>
 
-    <!-- Spaceship animation Files -->
-    <script src="plugins/spaceship-animation/tweenmax.js"></script>
+    <!-- Rocket animation Files -->
+    <script src="plugins/rocket-animation/vue.js"></script>
+    <script src="plugins/rocket-animation/app.js"></script>
 
     <!-- Main JS File -->
     <script type="text/javascript" src="js/main.js"></script>

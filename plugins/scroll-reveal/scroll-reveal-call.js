@@ -187,6 +187,7 @@ ScrollReveal().reveal(
     interval: 100,
     viewOffset: {
       bottom: 0,
+      top: 0,
     },
   }
 );
