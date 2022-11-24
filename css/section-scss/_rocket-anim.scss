@@ -325,6 +325,8 @@
     top: 30%;
     left: 30%;
     z-index: 2;
+    opacity: 0;
+    visibility: hidden;
 
     span {
         opacity: 1;

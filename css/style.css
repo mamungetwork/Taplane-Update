@@ -1282,6 +1282,8 @@ header.no_bg .btn:hover {
   top: 30%;
   left: 30%;
   z-index: 2;
+  opacity: 0;
+  visibility: hidden;
 }
 .countdown span {
   opacity: 1;
