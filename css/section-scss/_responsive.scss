@@ -1,3 +1,13 @@
+@media screen and (max-width: 1599px) {
+  .landing_section .content {
+    padding: 0;
+
+    .rocket-wrap {
+      transform: translateY(10%);
+    }
+  }
+}
+
 @media screen and (max-width: 1280px) {
   .landing_section .content {
     padding: 0;
@@ -7,7 +17,7 @@
 @media screen and (max-width: 1220px) {
   .landing_section .content .info {
     height: 342px;
-    margin-top: 0;
+    margin-top: -90px;
 
     h1 {
       font-size: 60px;
@@ -221,6 +231,14 @@
 
   .privacy_content .content {
     padding: 40px;
+  }
+
+  #app {
+    height: 80vh;
+  }
+
+  .landing_section .content .info {
+    margin-top: 0;
   }
 }
 
