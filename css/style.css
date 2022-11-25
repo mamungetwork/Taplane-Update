@@ -744,15 +744,15 @@ header.no_bg .btn:hover {
 }
 @keyframes translateinfinite {
   100% {
-    transform: translateX(-7600px);
+    transform: translateX(-4200px);
   }
 }
 .client_logo .strip_container .strip_lane {
-  width: 15200px;
+  width: 8400px;
 }
 .client_logo .strip_container .strip_lane .strip_item {
   width: 200px;
-  animation: translateinfinite 120s linear infinite;
+  animation: translateinfinite 80s linear infinite;
 }
 .client_logo .strip_container .strip_lane .strip_item .image {
   width: auto;

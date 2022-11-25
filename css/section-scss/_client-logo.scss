@@ -23,17 +23,17 @@
 
   @keyframes translateinfinite {
     100% {
-      transform: translateX(calc(-200px * 38));
+      transform: translateX(calc(-200px * 21));
     }
   }
 
   .strip_container {
     .strip_lane {
-      width: calc(200px * 76);
+      width: calc(200px * 42);
 
       .strip_item {
         width: 200px;
-        animation: translateinfinite 120s linear infinite;
+        animation: translateinfinite 80s linear infinite;
 
         .image {
           width: auto;
