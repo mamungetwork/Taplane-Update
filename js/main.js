@@ -234,13 +234,11 @@ const allIndicator = document.querySelectorAll("[data-indicator]");
 const stripeLane = document.querySelector(".strip_lane");
 const duplicateArray = Array.from(stripGroup);
 duplicateArray.forEach((element) => {
-  // console.log(element);
   const duplicateItem = element.cloneNode(true);
-  // console.log(duplicateItem);
+
   let newDataset = Number(duplicateItem.dataset.item) + stripGroup.length;
   duplicateItem.setAttribute("data-item", `${newDataset}`);
   stripeLane.appendChild(duplicateItem);
-  console.log(duplicateItem);
 });
 
 stripGroup = document.querySelectorAll("[data-name]");
