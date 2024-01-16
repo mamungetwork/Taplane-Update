@@ -729,7 +729,7 @@ header.no_bg .btn:hover {
 .client_logo h2 {
   padding: 60px 0 50px;
   text-align: center;
-  color: var(#333333);
+  color: #333333;
   text-align: center;
   font-family: Inter;
   font-size: 42px;
@@ -769,7 +769,7 @@ header.no_bg .btn:hover {
 .client_logo .indicator ul::before {
   content: "";
   position: absolute;
-  width: 65%;
+  width: 72%;
   height: 2px;
   background: #f8baaa;
   z-index: -1;
@@ -2366,6 +2366,12 @@ footer .content .contact_info > div a {
   .landing_section .content .info {
     margin-top: 0;
   }
+  .client_logo .indicator ul::before {
+    width: 97%;
+  }
+  .client_logo .indicator ul {
+    gap: 10px;
+  }
 }
 @media screen and (max-width: 600px) {
   .navbar .btn {
@@ -2488,14 +2494,11 @@ footer .content .contact_info > div a {
     width: 100%;
     object-fit: contain;
   }
-  .client_logo .strip_container .strip_lane {
-    width: 8360px;
-  }
   .client_logo .strip_container .strip_lane .strip_item {
-    width: 110px;
+    width: 140px;
   }
   .client_logo .strip_container::before, .client_logo .strip_container::after {
-    width: 60px;
+    width: 30px;
   }
   .bottom_copyright .content {
     justify-content: center;
@@ -2509,6 +2512,19 @@ footer .content .contact_info > div a {
     width: 16px;
     min-width: 16px;
     margin-top: 6px;
+  }
+  .client_logo .indicator ul {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .client_logo .indicator ul::before {
+    display: none;
+  }
+  .client_logo .indicator ul li {
+    padding: 10px 12px;
+  }
+  .client_logo h2 {
+    font-size: 36px;
   }
 }
 @media screen and (max-width: 380px) {
