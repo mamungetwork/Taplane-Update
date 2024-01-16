@@ -228,3 +228,46 @@ pos > 5 &&
 //   navImg.attr("src", `images/taplane_1.svg`);
 //   document.querySelector("header").classList.add("no_bg");
 // }
+
+let stripGroup = document.querySelectorAll("[data-item]");
+const allIndicator = document.querySelectorAll("[data-indicator]");
+const stripeLane = document.querySelector(".strip_lane");
+const duplicateArray = Array.from(stripGroup);
+duplicateArray.forEach((element) => {
+  // console.log(element);
+  const duplicateItem = element.cloneNode(true);
+  // console.log(duplicateItem);
+  let newDataset = Number(duplicateItem.dataset.item) + stripGroup.length;
+  duplicateItem.setAttribute("data-item", `${newDataset}`);
+  stripeLane.appendChild(duplicateItem);
+  console.log(duplicateItem);
+});
+
+stripGroup = document.querySelectorAll("[data-name]");
+
+function movestripGroup() {
+  stripGroup.forEach((item, index) => {
+    item.classList.remove("isvisible");
+
+    if (item.dataset.item) {
+      let itemWidth = item.clientWidth;
+      let leftPosition = item.getBoundingClientRect().left;
+      let rightPosition = item.getBoundingClientRect().right;
+      let viePortWidth = window.innerWidth;
+
+      if (leftPosition < viePortWidth / 2 && rightPosition > viePortWidth / 2) {
+        item.classList.add("isvisible");
+        let activeItem = item.dataset.name;
+        let indicatorItem = document.querySelector(
+          `[data-indicator="${activeItem}"]`
+        );
+        allIndicator.forEach((indi) => {
+          indi.classList.remove("active");
+        });
+        indicatorItem.classList.add("active");
+      }
+    }
+  });
+}
+
+setInterval(movestripGroup, 1000);
