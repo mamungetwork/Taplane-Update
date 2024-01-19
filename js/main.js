@@ -237,11 +237,11 @@ document.addEventListener("DOMContentLoaded", function () {
     drag: false,
     autoWidth: true,
     arrows: false,
-    perPage: 1,
-    focus: 0,
-    autoStart: true,
+    perPage: 2,
+    focus: "center",
+    // autoStart: true,
     autoScroll: {
-      speed: 1,
+      speed: 3,
       pauseOnHover: false,
       pauseOnFocus: false,
     },
@@ -252,11 +252,11 @@ document.addEventListener("DOMContentLoaded", function () {
     data.list.classList.add("splide__pagination");
 
     let slides = [
-      "Frontend",
+      "Mobile",
+      "Web",
       "Backend",
-      "Cloud Development",
-      "Connect Vehicles",
-      "Big Data Expertise",
+      "Cloud & Big Data",
+      "Database",
       // Add more items as needed
     ];
     // `items` contains all dot items
@@ -266,5 +266,6 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     });
   });
+
   splide.mount(window.splide.Extensions);
 });

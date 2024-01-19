@@ -800,7 +800,7 @@ header.no_bg .btn:hover {
 .client_logo .indicator ul::before {
   content: "";
   position: absolute;
-  width: 72%;
+  width: 55%;
   height: 2px;
   background: #f8baaa;
   z-index: -1;
@@ -2405,7 +2405,7 @@ footer .content .contact_info > div a {
     margin-top: 0;
   }
   .client_logo .indicator ul::before {
-    width: 97%;
+    width: 55%;
   }
   .client_logo .indicator ul {
     gap: 10px;
