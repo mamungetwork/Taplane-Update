@@ -2,7 +2,8 @@ class Carousel {
 
     carousel = $('#carousel')
     categories = $('.categories')
-    slick = null
+    activeCategory = null
+    nextCategory = null
 
     slides = [
         {
@@ -93,32 +94,32 @@ class Carousel {
         {
             title: 'Node.js',
             image: 'Node',
-            category: 'web'
+            category: 'backend'
         },
         {
             title: 'Express.js',
             image: 'Express',
-            category: 'web'
+            category: 'backend'
         },
         {
             title: 'PHP',
             image: 'php',
-            category: 'web'
+            category: 'backend'
         },
         {
             title: 'Laravel',
             image: 'Laravel',
-            category: 'web'
+            category: 'backend'
         },
         {
             title: 'Python',
             image: 'Python',
-            category: 'web'
+            category: 'backend'
         },
         {
             title: 'Django',
             image: 'Django',
-            category: 'web'
+            category: 'backend'
         },
         {
             title: 'Java',
@@ -261,10 +262,13 @@ class Carousel {
         this.carousel.slick({
             slidesToShow: 5,
             slidesToScroll: 1,
+            infinite: true,
             autoplay: true,
-            autoplaySpeed: 0,
+            pauseOnHover: false,
+            waitForAnimate: false,
+            autoplaySpeed: 1,
             speed: 1500,
-            cssEase: 'linear'
+            cssEase: 'linear',
         })
 
         this.carousel.on('afterChange', () => {
@@ -274,9 +278,16 @@ class Carousel {
                 if (i === 2) {
                     const category = $(slide).data('category')
                     this.setActiveCategory(category)
+
                 }
             })
+
+            // if (this.activeCategory !== this.nextCategory) {
+            //     this.goToCategory(this.nextCategory)
+            // }
         })
+
+        this.setActiveCategory('mobile')
 
         this.initCategoriesNavigation()
     }
@@ -285,26 +296,48 @@ class Carousel {
         this.categories.find('.category').each((i, categoryEl) => {
             $(categoryEl).on('click', () => {
                 const category = $(categoryEl).data('category')
-                const slides = this.carousel.find(`.slick-slide:not(.slick-cloned)`)
-                slides.each((i, slideEl) => {
-                    const slide = $(slideEl)
-                    if (slide.data('category') === category) {
-                        const index = slide.data('slickIndex')
-                        this.carousel.slick('slickGoTo', index > 2 ? (index - 2) : index)
-                        this.setActiveCategory(category)
-                        return false
-                    }
-                })
+                this.goToCategory(category)
             })
         })
     }
 
+    goToCategory (category) {
+        const slides = this.carousel.find(`.slick-slide:not(.slick-cloned)`)
+        slides.each((i, slideEl) => {
+            const slide = $(slideEl)
+            if (slide.data('category') === category) {
+                this.carousel.slick('slickPause')
+                const index = slide.data('slickIndex')
+                setTimeout(() => {
+                    this.carousel.slick('slickGoTo', (index > 2 ? (index - 2) : index), true)
+                }, 300)
+                this.setActiveCategory(category)
+                this.nextCategory = category
+                setTimeout(() => {
+                    this.carousel.slick('slickPlay')
+                }, 1500)
+                return false
+            }
+        })
+    }
+
     setActiveCategory (category) {
+        if (this.activeCategory === category) return
+        this.activeCategory = category
         const categoryEl = this.categories.find(`.category.${category}`)
         if (categoryEl) {
             this.categories.find('.category').removeClass('active')
             categoryEl.addClass('active')
         }
+
+        const slides = this.carousel.find('.slick-slide')
+        slides.removeClass('active-category')
+        slides.each((i, slideEl) => {
+            const slide = $(slideEl)
+            if (slide.data('category') === category) {
+                slide.addClass('active-category')
+            }
+        })
     }
 
     renderSlides () {
