@@ -18,11 +18,12 @@
     ul {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 30px;
       position: relative;
       isolation: isolate;
 
-      li {
+      li button {
         position: relative;
         z-index: 0;
         padding: 12px 24px;
@@ -67,7 +68,7 @@
         transition: all 0.3s ease-in-out;
       }
 
-      li.active {
+      li button.is-active {
         background: $primaryColor;
         color: #fff;
 
@@ -118,8 +119,8 @@
 
   .strip_container {
     .strip_lane {
-      width: max-content;
-      animation: translateinfinite var(--animation-duration) linear infinite;
+      // width: max-content;
+      // animation: translateinfinite var(--animation-duration) linear infinite;
 
       > div {
         display: flex;
@@ -162,7 +163,7 @@
       }
     }
 
-    .cat.isvisible {
+    .cat.is-active {
       .strip_item {
         border: 1px solid #fff;
         background: #fff;

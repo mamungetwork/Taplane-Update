@@ -210,8 +210,6 @@
 
   .client_logo .strip_container {
     .strip_lane {
-      width: calc(170px * 76);
-
       .strip_item {
         width: 170px;
 
@@ -442,7 +440,7 @@
     display: none;
   }
 
-  .client_logo .indicator ul li {
+  .client_logo .indicator ul li button {
     padding: 10px 12px;
   }
 

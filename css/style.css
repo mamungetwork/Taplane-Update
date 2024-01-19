@@ -744,11 +744,12 @@ header.no_bg .btn:hover {
 .client_logo .indicator ul {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 30px;
   position: relative;
   isolation: isolate;
 }
-.client_logo .indicator ul li {
+.client_logo .indicator ul li button {
   position: relative;
   z-index: 0;
   padding: 12px 24px;
@@ -763,7 +764,7 @@ header.no_bg .btn:hover {
   transition: 0.3s;
   cursor: pointer;
 }
-.client_logo .indicator ul li:hover {
+.client_logo .indicator ul li button:hover {
   color: #bf715e;
   background: #ffd5ca;
   color: #f13b0f;
@@ -789,11 +790,11 @@ header.no_bg .btn:hover {
   width: 100%;
   transition: all 0.3s ease-in-out;
 }
-.client_logo .indicator ul li.active {
+.client_logo .indicator ul li button.is-active {
   background: #f13b0f;
   color: #fff;
 }
-.client_logo .indicator ul li.active .line-wave {
+.client_logo .indicator ul li button.is-active .line-wave {
   opacity: 1;
 }
 .client_logo .indicator ul::before {
@@ -828,10 +829,6 @@ header.no_bg .btn:hover {
   100% {
     transform: translateX(calc(-50% - 8px));
   }
-}
-.client_logo .strip_container .strip_lane {
-  width: max-content;
-  animation: translateinfinite var(--animation-duration) linear infinite;
 }
 .client_logo .strip_container .strip_lane > div {
   display: flex;
@@ -868,7 +865,7 @@ header.no_bg .btn:hover {
   font-weight: 500;
   line-height: normal;
 }
-.client_logo .strip_container .cat.isvisible .strip_item {
+.client_logo .strip_container .cat.is-active .strip_item {
   border: 1px solid #fff;
   background: #fff;
 }
@@ -2373,9 +2370,6 @@ footer .content .contact_info > div a {
   .what_we_do .content .right_content .card_content .card h3 {
     margin-bottom: 10px;
   }
-  .client_logo .strip_container .strip_lane {
-    width: 12920px;
-  }
   .client_logo .strip_container .strip_lane .strip_item {
     width: 170px;
   }
@@ -2550,7 +2544,7 @@ footer .content .contact_info > div a {
   .client_logo .indicator ul::before {
     display: none;
   }
-  .client_logo .indicator ul li {
+  .client_logo .indicator ul li button {
     padding: 10px 12px;
   }
   .client_logo h2 {

@@ -113,19 +113,19 @@ function hexFour() {
 var intervalID = window.setInterval(hexFour, 7800);
 const hexFifth = document.querySelectorAll(".hex-5 b"),
   hex5LastItem = document.querySelector(".hex-5 .dynamic-8");
-let n = 1;
+let nx = 1;
 function hexFive() {
-  if (n <= hexFifth.length) {
-    $(`.hex-5 .dynamic-${n - 1}`).removeClass("active"),
-      $(`.hex-5 .dynamic-${n}`).addClass("active"),
-      1 === n &&
+  if (nx <= hexFifth.length) {
+    $(`.hex-5 .dynamic-${nx - 1}`).removeClass("active"),
+      $(`.hex-5 .dynamic-${nx}`).addClass("active"),
+      1 === nx &&
         hex5LastItem.classList.contains("active") &&
         $(".hex-5 .dynamic-8").removeClass("active"),
-      1 === n || $(".hex-5").toggleClass("active"),
-      n++;
+      1 === nx || $(".hex-5").toggleClass("active"),
+      nx++;
     return;
   }
-  n = 0;
+  nx = 0;
 }
 var intervalID = window.setInterval(hexFive, 8400);
 const hexSixth = document.querySelectorAll(".hex-6 b"),
@@ -230,44 +230,40 @@ pos > 5 &&
 //   navImg.attr("src", `images/taplane_1.svg`);
 //   document.querySelector("header").classList.add("no_bg");
 // }
+document.addEventListener("DOMContentLoaded", function () {
+  new Splide(".splide", {
+    type: "loop",
+    drag: false,
+    focus: "center",
+    perPage: 1,
+    autoWidth: true,
+    arrows: false,
+    // pagination: false,
+    autoScroll: {
+      speed: 1,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+    },
+  })
+    .on("pagination:mounted", function (data) {
+      // You can add your class to the UL element
+      data.list.classList.add("splide__pagination--custom");
 
-let stripGroup = document.querySelectorAll("[data-item]");
-const allIndicator = document.querySelectorAll("[data-indicator]");
-const stripeLane = document.querySelector(".strip_lane");
-const duplicateArray = Array.from(stripGroup);
-duplicateArray.forEach((element) => {
-  const duplicateItem = element.cloneNode(true);
-
-  let newDataset = Number(duplicateItem.dataset.item) + stripGroup.length;
-  duplicateItem.setAttribute("data-item", `${newDataset}`);
-  stripeLane.appendChild(duplicateItem);
-});
-
-stripGroup = document.querySelectorAll("[data-name]");
-
-function movestripGroup() {
-  stripGroup.forEach((item, index) => {
-    item.classList.remove("isvisible");
-
-    if (item.dataset.item) {
-      let itemWidth = item.clientWidth;
-      let leftPosition = item.getBoundingClientRect().left;
-      let rightPosition = item.getBoundingClientRect().right;
-      let viePortWidth = window.innerWidth;
-
-      if (leftPosition < viePortWidth / 2 && rightPosition > viePortWidth / 2) {
-        item.classList.add("isvisible");
-        let activeItem = item.dataset.name;
-        let indicatorItem = document.querySelector(
-          `[data-indicator="${activeItem}"]`
+      let slides = [
+        "Frontend",
+        "Backend",
+        "Cloud Development",
+        "Connect Vehicles",
+        "Big Data Expertise",
+        // Add more items as needed
+      ];
+      // `items` contains all dot items
+      data.items.forEach(function (item) {
+        // item.button.innerHTML = String(item.page + 1);
+        item.button.innerHTML = String(
+          `${slides[item.page]}<span class="line-wave"></span>`
         );
-        allIndicator.forEach((indi) => {
-          indi.classList.remove("active");
-        });
-        indicatorItem.classList.add("active");
-      }
-    }
-  });
-}
-
-setInterval(movestripGroup, 1000);
+      });
+    })
+    .mount(window.splide.Extensions);
+});

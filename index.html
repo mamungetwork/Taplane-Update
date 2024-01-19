@@ -614,20 +614,14 @@
     <!-- *********************** Client Logo Strip SECTION START *********************** -->
     <section class="client_logo">
         <div class="container">
-            <div class="content">
+            <div class="content splide">
                 <h2>Our Technology Stack</h2>
                 <div class="indicator">
-                    <ul>
-                        <li data-indicator="frontend" class="item active">Frontend<span class="line-wave"></span></li>
-                        <li data-indicator="backend" class="item">Backend<span class="line-wave"></span></li>
-                        <li data-indicator="cloud" class="item">Cloud Development<span class="line-wave"></span></li>
-                        <li data-indicator="cv" class="item">Connect Vehicles<span class="line-wave"></span></li>
-                        <li data-indicator="data" class="item">Big Data Expertise<span class="line-wave"></span></li>
-                    </ul>
+                    <ul class="splide__pagination"></ul>
                 </div>
-                <div class="strip_container">
-                    <ul class="strip_lane">
-                        <div data-name="frontend" data-item="1" class="cat cat1 isvisible">
+                <div class="strip_container splide__track">
+                    <ul class="strip_lane splide__list">
+                        <div data-name="frontend" data-item="1" class="cat splide__slide cat1">
                             <li class="strip_item">
                                 <div class="image">
                                     <img src="./images/client-logo/001.png" alt="Node.js">
@@ -659,7 +653,7 @@
                                 <p class="label">Laravel</p>
                             </li>
                         </div>
-                        <div data-name="backend" data-item="2" class="cat cat2">
+                        <div data-name="backend" data-item="2" class="cat splide__slide cat2">
                             <li class="strip_item">
                                 <div class="image">
                                     <img src="./images/client-logo/006.png" alt="React">
@@ -691,7 +685,7 @@
                                 <p class="label">HTML5</p>
                             </li>
                         </div>
-                        <div data-name="cloud" data-item="3" class="cat cat3">
+                        <div data-name="cloud" data-item="3" class="cat splide__slide cat3">
                             <li class="strip_item">
                                 <div class="image">
                                     <img src="./images/client-logo/011.png" alt="WordPress">
@@ -723,7 +717,7 @@
                                 <p class="label">Flutter</p>
                             </li>
                         </div>
-                        <div data-name="cv" data-item="4" class="cat cat4">
+                        <div data-name="cv" data-item="4" class="cat splide__slide cat4">
                             <li class="strip_item">
                                 <div class="image">
                                     <img src="./images/client-logo/016.png" alt="C#">
@@ -755,7 +749,7 @@
                                 <p class="label">Git</p>
                             </li>
                         </div>
-                        <div data-name="data" data-item="5" class="cat cat5">
+                        <div data-name="data" data-item="5" class="cat splide__slide cat5">
                             <li class="strip_item">
                                 <div class="image">
                                     <img src="./images/client-logo/021.png" alt="SQL">
@@ -908,6 +902,14 @@
     <!-- Rocket animation Files -->
     <script src="plugins/rocket-animation/vue.js"></script>
     <script src="plugins/rocket-animation/app.js"></script>
+
+    <!-- Splide JS File -->
+    <script src="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+    "></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js
+    "></script>
 
     <!-- Main JS File -->
     <script type="text/javascript" src="js/main.js"></script>
