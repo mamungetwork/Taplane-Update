@@ -231,41 +231,41 @@ pos > 5 &&
 //   document.querySelector("header").classList.add("no_bg");
 // }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const splide = new Splide(".splide", {
-    type: "loop",
-    drag: false,
-    autoWidth: true,
-    arrows: false,
-    perPage: 2,
-    focus: "center",
-    // autoStart: true,
-    autoScroll: {
-      speed: 3,
-      pauseOnHover: false,
-      pauseOnFocus: false,
-    },
-  });
-
-  splide.on("pagination:mounted", function (data) {
-    // You can add your class to the UL element
-    data.list.classList.add("splide__pagination");
-
-    let slides = [
-      "Mobile",
-      "Web",
-      "Backend",
-      "Cloud & Big Data",
-      "Database",
-      // Add more items as needed
-    ];
-    // `items` contains all dot items
-    data.items.forEach(function (item) {
-      item.button.innerHTML = String(
-        `${slides[item.page]}<span class="line-wave"></span>`
-      );
-    });
-  });
-
-  splide.mount(window.splide.Extensions);
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   const splide = new Splide(".splide", {
+//     type: "loop",
+//     drag: false,
+//     autoWidth: true,
+//     arrows: false,
+//     perPage: 2,
+//     focus: "center",
+//     // autoStart: true,
+//     autoScroll: {
+//       speed: 3,
+//       pauseOnHover: false,
+//       pauseOnFocus: false,
+//     },
+//   });
+//
+//   splide.on("pagination:mounted", function (data) {
+//     // You can add your class to the UL element
+//     data.list.classList.add("splide__pagination");
+//
+//     let slides = [
+//       "Mobile",
+//       "Web",
+//       "Backend",
+//       "Cloud & Big Data",
+//       "Database",
+//       // Add more items as needed
+//     ];
+//     // `items` contains all dot items
+//     data.items.forEach(function (item) {
+//       item.button.innerHTML = String(
+//         `${slides[item.page]}<span class="line-wave"></span>`
+//       );
+//     });
+//   });
+//
+//   splide.mount(window.splide.Extensions);
+// });
