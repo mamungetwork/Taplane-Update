@@ -4,6 +4,8 @@ let contactBTN = document.querySelectorAll("#contact_btn"),
   mainPopup = document.querySelector(".popup"),
   popupOverlay = document.querySelector(".popup_overlay"),
   overflow = document.querySelector("body");
+const root = document.querySelector(":root");
+
 const popupClose = function () {
     mainPopup.classList.remove("popup_active"),
       overflow.classList.remove("popup_open");
