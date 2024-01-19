@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
     focus: "center",
     // autoStart: true,
     autoScroll: {
-      speed: 3,
+      speed: 1,
       pauseOnHover: false,
       pauseOnFocus: false,
     },
