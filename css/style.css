@@ -730,6 +730,11 @@ header.no_bg .btn:hover {
   padding-top: 0px;
   background: #fdeae5;
 }
+@media screen and (max-width: 768px) {
+  .client_logo {
+    display: none;
+  }
+}
 .client_logo h2 {
   padding: 60px 0 50px;
   text-align: center;
@@ -922,6 +927,7 @@ header.no_bg .btn:hover {
   cursor: pointer;
   position: relative;
   z-index: 2;
+  transition: all 300ms ease-in-out;
 }
 .client_logo .container .categories .category .line-wave {
   width: 100%;

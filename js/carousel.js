@@ -3,7 +3,6 @@ class Carousel {
     carousel = $('#carousel')
     categories = $('.categories')
     activeCategory = null
-    nextCategory = null
 
     slides = [
         {
@@ -281,10 +280,6 @@ class Carousel {
 
                 }
             })
-
-            // if (this.activeCategory !== this.nextCategory) {
-            //     this.goToCategory(this.nextCategory)
-            // }
         })
 
         this.setActiveCategory('mobile')
@@ -312,7 +307,6 @@ class Carousel {
                     this.carousel.slick('slickGoTo', (index > 2 ? (index - 2) : index), true)
                 }, 300)
                 this.setActiveCategory(category)
-                this.nextCategory = category
                 setTimeout(() => {
                     this.carousel.slick('slickPlay')
                 }, 1500)
@@ -349,8 +343,8 @@ class Carousel {
     getSlideHtml (slide) {
         return `
             <div class="slide" data-category="${ slide.category }">
-                <img src="/images/client-logo/${ slide.category }/${ slide.image }-01.svg" class="primary" alt="${ slide.title }">
-                <img src="/images/client-logo/${ slide.category }/${ slide.image }-02.svg" class="secondary" alt="${ slide.title }">
+                <img src="images/client-logo/${ slide.category }/${ slide.image }-01.svg" class="primary" alt="${ slide.title }">
+                <img src="images/client-logo/${ slide.category }/${ slide.image }-02.svg" class="secondary" alt="${ slide.title }">
                 <span class="title">${ slide.title }</span>
             </div>
         `
