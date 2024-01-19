@@ -230,40 +230,41 @@ pos > 5 &&
 //   navImg.attr("src", `images/taplane_1.svg`);
 //   document.querySelector("header").classList.add("no_bg");
 // }
+
 document.addEventListener("DOMContentLoaded", function () {
-  new Splide(".splide", {
+  const splide = new Splide(".splide", {
     type: "loop",
     drag: false,
-    focus: "center",
-    perPage: 1,
     autoWidth: true,
     arrows: false,
-    // pagination: false,
+    perPage: 1,
+    focus: 0,
+    autoStart: true,
     autoScroll: {
       speed: 1,
       pauseOnHover: false,
       pauseOnFocus: false,
     },
-  })
-    .on("pagination:mounted", function (data) {
-      // You can add your class to the UL element
-      data.list.classList.add("splide__pagination--custom");
+  });
 
-      let slides = [
-        "Frontend",
-        "Backend",
-        "Cloud Development",
-        "Connect Vehicles",
-        "Big Data Expertise",
-        // Add more items as needed
-      ];
-      // `items` contains all dot items
-      data.items.forEach(function (item) {
-        // item.button.innerHTML = String(item.page + 1);
-        item.button.innerHTML = String(
-          `${slides[item.page]}<span class="line-wave"></span>`
-        );
-      });
-    })
-    .mount(window.splide.Extensions);
+  splide.on("pagination:mounted", function (data) {
+    // You can add your class to the UL element
+    data.list.classList.add("splide__pagination");
+
+    let slides = [
+      "Frontend",
+      "Backend",
+      "Cloud Development",
+      "Connect Vehicles",
+      "Big Data Expertise",
+      // Add more items as needed
+    ];
+    // `items` contains all dot items
+    data.items.forEach(function (item) {
+      item.button.innerHTML = String(
+        `${slides[item.page]}<span class="line-wave"></span>`
+      );
+    });
+  });
+  splide.mount(window.splide.Extensions);
 });

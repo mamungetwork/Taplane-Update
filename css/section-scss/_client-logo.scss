@@ -151,6 +151,9 @@
             object-fit: contain;
           }
         }
+        .image02 {
+          display: none;
+        }
 
         p {
           color: $darkColor;
@@ -167,6 +170,13 @@
       .strip_item {
         border: 1px solid #fff;
         background: #fff;
+
+        .image01 {
+          display: none;
+        }
+        .image02 {
+          display: inline-block;
+        }
       }
     }
 
@@ -191,4 +201,9 @@
       background: linear-gradient(to left, #fdeae5 0%, #fdeae500 100%);
     }
   }
+}
+
+.splide__progress__bar {
+  height: 4px;
+  background: red;
 }

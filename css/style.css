@@ -857,6 +857,9 @@ header.no_bg .btn:hover {
   height: 100%;
   object-fit: contain;
 }
+.client_logo .strip_container .strip_lane .strip_item .image02 {
+  display: none;
+}
 .client_logo .strip_container .strip_lane .strip_item p {
   color: #333333;
   text-align: center;
@@ -868,6 +871,12 @@ header.no_bg .btn:hover {
 .client_logo .strip_container .cat.is-active .strip_item {
   border: 1px solid #fff;
   background: #fff;
+}
+.client_logo .strip_container .cat.is-active .strip_item .image01 {
+  display: none;
+}
+.client_logo .strip_container .cat.is-active .strip_item .image02 {
+  display: inline-block;
 }
 .client_logo .strip_container::before, .client_logo .strip_container::after {
   content: " ";
@@ -885,6 +894,11 @@ header.no_bg .btn:hover {
   top: 0;
   right: 0;
   background: linear-gradient(to left, #fdeae5 0%, rgba(253, 234, 229, 0) 100%);
+}
+
+.splide__progress__bar {
+  height: 4px;
+  background: red;
 }
 
 /* ******************** CLIENT LOGO STYLING END ******************** */
